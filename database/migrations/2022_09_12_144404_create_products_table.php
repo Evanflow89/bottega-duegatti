@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name', 150);
             $table->string('material', 150)->nullable();
+            $table->string('size', 150)->nullable();
             $table->text('description');
             $table->float('price', 6, 2);
             $table->string('img')->nullable();
