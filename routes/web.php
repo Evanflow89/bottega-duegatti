@@ -13,10 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+
+// Backoffice - Area pubblica - auth
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Backoffice - Area privata
+Route::middleware('auth')
+   ->namespace('Admin')
+   ->name('admin.')
+   ->prefix('admin')
+   ->group(function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+ 
+});
+
+// Front office
+Route::get("{any?}", function() {
+    return view("guest.home");
+})->where("any", ".*");
