@@ -33,7 +33,7 @@ Route::middleware('auth')
  
 });
 
-// // Front office
-// Route::get("{any?}", function() {
-//     return view("guest.home");
-// })->where("any", ".*");
+// Front office
+Route::get("{any?}", function() {
+    return view("guest.home");
+})->where("any", ".*");
