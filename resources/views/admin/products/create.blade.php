@@ -11,19 +11,40 @@
                 @csrf
                 <div class="form-group">
                   <label for="name">Nome Prodotto</label>
-                  <input type="text" class="form-control" id="name" name="name">
+                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
+                  @error('name')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
                 </div>
                 <div class="form-group">
                     <label for="material">Materiale</label>
-                    <input type="text" class="form-control" id="material" name="material">
+                    <input type="text" class="form-control @error('material') is-invalid @enderror" id="material" name="material">
+                    @error('material')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                   </div>
+                 
                   <div class="form-group">
                     <label for="size">Dimensioni</label>
-                    <input type="text" class="form-control" id="size" name="size">
+                    <input type="text" class="form-control @error('size') is-invalid @enderror" id="size" name="size">
+                    @error('size')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                   </div>
+ 
                   <div class="form-group">
                     <label for="description">Descrizione</label>
-                    <textarea class="form-control" id="description" name="description" rows="10"></textarea>
+                    <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="10"></textarea>
+                    @error('description')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="price">Prezzo €</label>
+                    <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price">
+                    @error('price')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                   </div>
 
                   <div class="form-group">

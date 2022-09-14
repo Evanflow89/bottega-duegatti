@@ -37,11 +37,20 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //validazione
-
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'material' => 'required|string|max:255',
+            'size' => 'required|string',
+            'description' => 'required|string',
+            'price' => 'required|numeric',
+            'img' => 'mimes:jpeg,bmp,png',
+            'available' => 'sometimes|accepted'
+        ]);
         //prendo i dati dalla request
         $data = $request->all();
         $newProduct = new Product();
         $newProduct->fill($data);
+        $newProduct->available = isset($data['available']);
         $newProduct->save();
         //redirect
         return redirect()->route('admin.products.show', $newProduct->id);
