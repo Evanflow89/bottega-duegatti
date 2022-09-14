@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -35,7 +36,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validazione
+
+        //prendo i dati dalla request
+        $data = $request->all();
+        $newProduct = new Product();
+        $newProduct->fill($data);
+        $newProduct->save();
+        //redirect
+        return redirect()->route('admin.products.show', $newProduct->id);
     }
 
     /**
