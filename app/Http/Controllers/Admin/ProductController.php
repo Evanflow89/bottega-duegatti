@@ -87,9 +87,25 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        //validazione
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'material' => 'required|string|max:255',
+            'size' => 'required|string',
+            'description' => 'required|string',
+            'price' => 'required|numeric',
+            'img' => 'mimes:jpeg,bmp,png',
+            'available' => 'sometimes|accepted'
+        ]);
+        //aggiornamento
+        $data = $request->all();
+        $product->fill($data);
+        $product->available = isset($data['available']);
+        $product->save();
+        //redirect
+        return redirect()->route('admin.products.show', $product->id);
     }
 
     /**
@@ -98,8 +114,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->route('admin.products.index');
     }
 }
