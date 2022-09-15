@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <a href="{{route('admin.products.index')}}" class="btn btn-primary">Visualizza tutti i prodotti</a>
                 </div>
             </div>
         </div>

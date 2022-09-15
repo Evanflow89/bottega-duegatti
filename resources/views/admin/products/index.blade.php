@@ -7,6 +7,9 @@
             <h1>Lista Prodotti</h1>
         </div>
         <div class="card-body">
+            <div class="mb-3">
+                <a href="{{route('admin.products.create')}}" class="btn btn-success">Inserisci un nuovo prodotto</a>
+            </div>
             <table class="table table-striped">
                 <thead>
                   <tr>
@@ -37,6 +40,7 @@
                         </td>
                         <td>
                             <a href="{{route('admin.products.show', $product->id)}}" class="btn btn-primary">Visualizza</a>
+                            <a href="{{route('admin.products.edit', $product->id)}}" class="btn btn-warning">Modifica</a>
                         </td>
                     </tr>
                     @endforeach
