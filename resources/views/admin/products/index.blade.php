@@ -41,13 +41,11 @@
                         <td>
                             <a href="{{route('admin.products.show', $product->id)}}" class="btn btn-primary">Visualizza</a>
                             <a href="{{route('admin.products.edit', $product->id)}}" class="btn btn-warning">Modifica</a>
-                         <form action="{{route('admin.products.destroy', $product->id)}}" method="POST">
-                        @csrf
-                    @method('DELETE')
-                <button type="submit" class="btn btn-danger">Elimina</button>
-            </form>
+                            <a class="btn btn-danger delete" href="#" data-toggle="modal" data-target="#ModalDelete{{$product->id}}">{{ __('Elimina') }}</a></div>
                         </td>
+                        @include('admin.products.modal.delete') 
                     </tr>
+                        
                     @endforeach
                  
          
