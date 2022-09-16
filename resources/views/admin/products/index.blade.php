@@ -17,7 +17,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Materiale</th>
                     <th scope="col">Descrizione</th>
-                    <th scope="col">Prezzo</th>
+                    <th scope="col">Prezzo €</th>
                     <th scope="col">Disponibile</th>
                     <th scope="col">Azioni</th>
                   </tr>
@@ -41,11 +41,16 @@
                         <td>
                             <a href="{{route('admin.products.show', $product->id)}}" class="btn btn-primary">Visualizza</a>
                             <a href="{{route('admin.products.edit', $product->id)}}" class="btn btn-warning">Modifica</a>
-                            <a class="btn btn-danger delete" href="#" data-toggle="modal" data-target="#ModalDelete{{$product->id}}">{{ __('Elimina') }}</a></div>
+                            <a class="delete btn btn-danger" href="#" data-toggle="modal" data-target="#ModalDelete{{$product->id}}">{{ __('Elimina') }}</a></div>
+                                  
+
+                          
+                         
+                             
+                      @include('admin.products.modal.delete')     
                         </td>
-                        @include('admin.products.modal.delete') 
+                       
                     </tr>
-                        
                     @endforeach
                  
          
