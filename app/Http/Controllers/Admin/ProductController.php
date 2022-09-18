@@ -39,6 +39,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //validazione
+        dd($request->all());
         $request->validate([
             'name' => 'required|string|max:255',
             'material' => 'required|string|max:255',
