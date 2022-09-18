@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Product;
 
 class ProductController extends Controller
@@ -39,14 +40,13 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //validazione
-        dd($request->all());
         $request->validate([
             'name' => 'required|string|max:255',
             'material' => 'required|string|max:255',
             'size' => 'required|string',
             'description' => 'required|string',
             'price' => 'required|numeric',
-            'img' => 'mimes:jpeg,bmp,png',
+            'img' => 'nullable|mimes:jpeg,bmp,png',
             'available' => 'sometimes|accepted'
         ]);
         //prendo i dati dalla request
@@ -54,6 +54,10 @@ class ProductController extends Controller
         $newProduct = new Product();
         $newProduct->fill($data);
         $newProduct->available = isset($data['available']);
+        if (isset($data['img'])){
+            $newProduct->img= Storage::put('uploads', $data['img']);
+
+        }
         $newProduct->save();
         //redirect
         return redirect()->route('admin.products.show', $newProduct->id);
@@ -97,7 +101,7 @@ class ProductController extends Controller
             'size' => 'required|string',
             'description' => 'required|string',
             'price' => 'required|numeric',
-            'img' => 'mimes:jpeg,bmp,png',
+            'img' => 'nullable|mimes:jpeg,bmp,png',
             'available' => 'sometimes|accepted'
         ]);
         //aggiornamento
