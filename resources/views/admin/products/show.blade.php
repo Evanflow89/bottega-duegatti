@@ -11,6 +11,12 @@
                 <a href="{{route('admin.products.index')}}" class="btn btn-primary">Torna ai prodotti</a>
             </div>
             {{$product->description}}
+@if ($product->img)
+        <div class="mb-3">
+            <img src="{{asset("storage/{$product->img}")}}" alt="">
+        </div>
+@endif
+           
         </div>
     </div>
 </div>
