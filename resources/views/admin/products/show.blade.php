@@ -12,6 +12,8 @@
             </div>
             {{$product->description}}
 
+            
+
         <div class="mb-3">
             <img src="{{asset("storage/{$product->img}")}}" alt="">
         </div>
