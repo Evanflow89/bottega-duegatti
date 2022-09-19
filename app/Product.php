@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $guarded = ['img'];
+    protected $guarded = ['img','img_2','img_3','img_4'];
 }

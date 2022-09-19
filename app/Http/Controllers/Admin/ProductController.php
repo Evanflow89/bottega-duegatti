@@ -47,6 +47,9 @@ class ProductController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric',
             'img' => 'nullable|mimes:jpeg,bmp,png',
+            'img_2' => 'nullable|mimes:jpeg,bmp,png',
+            'img_3' => 'nullable|mimes:jpeg,bmp,png',
+            'img_4' => 'nullable|mimes:jpeg,bmp,png',
             'available' => 'sometimes|accepted'
         ]);
         //prendo i dati dalla request
@@ -56,6 +59,18 @@ class ProductController extends Controller
         $newProduct->available = isset($data['available']);
         if (isset($data['img'])){
             $newProduct->img= Storage::put('uploads', $data['img']);
+
+        }
+        if (isset($data['img_2'])){
+            $newProduct->img_2= Storage::put('uploads', $data['img_2']);
+
+        }
+        if (isset($data['img_3'])){
+            $newProduct->img_3= Storage::put('uploads', $data['img_3']);
+
+        }
+        if (isset($data['img_4'])){
+            $newProduct->img_4= Storage::put('uploads', $data['img_4']);
 
         }
         $newProduct->save();
@@ -102,6 +117,9 @@ class ProductController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric',
             'img' => 'nullable|mimes:jpeg,bmp,png',
+            'img_2' => 'nullable|mimes:jpeg,bmp,png',
+            'img_3' => 'nullable|mimes:jpeg,bmp,png',
+            'img_4' => 'nullable|mimes:jpeg,bmp,png',
             'available' => 'sometimes|accepted'
         ]);
         //aggiornamento
