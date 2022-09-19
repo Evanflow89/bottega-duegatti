@@ -22,12 +22,17 @@
                   <div class="carousel-item active">
                     <img src="{{asset("storage/{$product->img}")}}" class="d-block w-100" alt="...">
                   </div>
+                  @if ($product->img_2)
                   <div class="carousel-item">
                     <img src="{{asset("storage/{$product->img_2}")}}" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item">
+                  @endif
+                 @if ($product->img_3)
+                 <div class="carousel-item">
                     <img src="{{asset("storage/{$product->img_3}")}}" class="d-block w-100" alt="...">
                   </div>
+                 @endif
+                  
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
