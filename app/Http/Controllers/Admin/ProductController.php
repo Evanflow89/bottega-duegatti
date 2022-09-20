@@ -45,11 +45,11 @@ class ProductController extends Controller
             'material' => 'required|string|max:255',
             'size' => 'required|string',
             'description' => 'required|string',
+            'old_price' => 'required|numeric',
             'price' => 'required|numeric',
             'img' => 'nullable|mimes:jpeg,bmp,png',
             'img_2' => 'nullable|mimes:jpeg,bmp,png',
             'img_3' => 'nullable|mimes:jpeg,bmp,png',
-            'img_4' => 'nullable|mimes:jpeg,bmp,png',
             'available' => 'sometimes|accepted'
         ]);
         //prendo i dati dalla request
@@ -69,10 +69,7 @@ class ProductController extends Controller
             $newProduct->img_3= Storage::put('uploads', $data['img_3']);
 
         }
-        if (isset($data['img_4'])){
-            $newProduct->img_4= Storage::put('uploads', $data['img_4']);
-
-        }
+      
         $newProduct->save();
         //redirect
         return redirect()->route('admin.products.show', $newProduct->id);
@@ -115,17 +112,38 @@ class ProductController extends Controller
             'material' => 'required|string|max:255',
             'size' => 'required|string',
             'description' => 'required|string',
+            'old_price' => 'required|numeric',
             'price' => 'required|numeric',
             'img' => 'nullable|mimes:jpeg,bmp,png',
             'img_2' => 'nullable|mimes:jpeg,bmp,png',
             'img_3' => 'nullable|mimes:jpeg,bmp,png',
-            'img_4' => 'nullable|mimes:jpeg,bmp,png',
             'available' => 'sometimes|accepted'
         ]);
         //aggiornamento
         $data = $request->all();
         $product->fill($data);
         $product->available = isset($data['available']);
+        if(isset($data['img'])) {
+            if($product->img) {
+                Storage::delete($product->img);
+            }
+
+            $product->img = Storage::put('uploads', $data['img']);
+        }
+        if(isset($data['img_2'])) {
+            if($product->img_2) {
+                Storage::delete($product->img_2);
+            }
+
+            $product->img_2 = Storage::put('uploads', $data['img_2']);
+        }
+        if(isset($data['img_3'])) {
+            if($product->img_3) {
+                Storage::delete($product->img_3);
+            }
+
+            $product->img_3 = Storage::put('uploads', $data['img_3']);
+        }
         $product->save();
         //redirect
         return redirect()->route('admin.products.show', $product->id);
@@ -147,9 +165,6 @@ class ProductController extends Controller
         }
         if($product->img_3) {
             Storage::delete($product->img_3);
-        }
-        if($product->img_4) {
-            Storage::delete($product->img_4);
         }
         $product->delete();
 

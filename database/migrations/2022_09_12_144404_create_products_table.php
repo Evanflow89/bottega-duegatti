@@ -19,11 +19,11 @@ class CreateProductsTable extends Migration
             $table->string('material', 150)->nullable();
             $table->string('size', 150)->nullable();
             $table->text('description');
+            $table->float('old_price', 6, 2);
             $table->float('price', 6, 2);
             $table->string('img')->nullable();
             $table->string('img_2')->nullable();
             $table->string('img_3')->nullable();
-            $table->string('img_4')->nullable();
             $table->boolean('available')->default(false);
             $table->timestamps();
         });

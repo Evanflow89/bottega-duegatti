@@ -52,7 +52,6 @@
                     <input type="file" class="form-control-file" id="img" name="img" value="{{old('img')}}">
                     <input type="file" class="form-control-file" id="img_2" name="img_2" value="{{old('img_2')}}">
                     <input type="file" class="form-control-file" id="img_3" name="img_3" value="{{old('img_3')}}">
-                    <input type="file" class="form-control-file" id="img_4" name="img_4" value="{{old('img_4')}}">
                 </div>
       
                 <div class="form-group form-check">
