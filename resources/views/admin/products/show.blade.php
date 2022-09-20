@@ -50,7 +50,7 @@
             
        
  {{-- ############ SECTION RIGHT CARD ################# --}}
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-5 mt-3">
                   <div class="name-product">
                     <p>Nome Prodotto: {{$product->name}}</p>
                   </div>
