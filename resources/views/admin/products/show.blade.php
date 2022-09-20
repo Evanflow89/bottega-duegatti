@@ -51,15 +51,30 @@
        
  {{-- ############ SECTION RIGHT CARD ################# --}}
                 <div class="col-12 col-md-5">
+                  <div class="name-product">
+                    <p>Nome Prodotto: {{$product->name}}</p>
+                  </div>
+                  <div class="material-product">
+                    <p>Materiale: {{$product->material}}</p>
+                  </div>
+                  <div class="size-product">
+                    <p>Dimensioni: {{$product->size}} cm</p>
+                  </div>
                   <div class="description-product">
-                    {{$product->description}}
+                   <p>Descrizione: {{$product->description}}</p> 
                   </div>
                   <div class="oldPrice-product">
-                    {{$product->old_price}}
+                   <p>Prezzo Precedente: <del>{{$product->old_price}}</del> €</p> 
                   </div>
                   <div class="price-product">
-                    {{$product->price}}
+                   <p>Prezzo Attuale: {{$product->price}} €</p> 
                   </div>
+                  @if ($product->available)
+                  <span class="badge badge-pill badge-success">Disponibile</span>
+                 
+                  @else
+                  <span class="badge badge-pill badge-danger">Terminato</span>
+                  @endif
                  
                 </div>
 
