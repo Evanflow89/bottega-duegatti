@@ -49,8 +49,34 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="img">Immagine</label>
-                    <input type="file" class="form-control-file" id="img" name="img" value="{{old('img')}}">
+                    <label for="image">Immagini</label>
+                    @if($product->img)
+                    <div class="mb-1">
+                        <img width="100" src="{{asset("storage/{$product->img}")}}" alt="">
+                    </div>
+                    @endif
+                    <input type="file" class="form-control-file @error('img') is-invalid @enderror" id="img" name="img" value="{{old('img')}}">
+                    @error('img')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    @if($product->img_2)
+                    <div class="mb-1">
+                        <img width="100" src="{{asset("storage/{$product->img_2}")}}" alt="">
+                    </div>
+                    @endif
+                    <input type="file" class="form-control-file @error('img_2') is-invalid @enderror" id="img_2" name="img_2" value="{{old('img_2')}}">
+                    @error('img_2')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    @if($product->img_3)
+                    <div class="mb-1">
+                        <img width="100" src="{{asset("storage/{$product->img_3}")}}" alt="">
+                    </div>
+                    @endif
+                    <input type="file" class="form-control-file @error('img_3') is-invalid @enderror" id="img_3" name="img_3" value="{{old('img_3')}}">
+                    @error('img_3')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
       
                 <div class="form-group form-check">
