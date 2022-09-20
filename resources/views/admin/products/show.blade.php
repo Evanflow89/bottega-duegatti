@@ -12,7 +12,7 @@
             </div>
             <div class="row d-flex justify-content-center">
               {{-- ############ SECTION LEFT CARD ################# --}}
-              <div class="col-12 col-md-5">
+              <div class="col-12">
                
 
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -46,28 +46,26 @@
                       <span class="sr-only">Next</span>
                     </a>
                   </div>
-              </div>
+              
             
-       
- {{-- ############ SECTION RIGHT CARD ################# --}}
-                <div class="col-12 col-md-5 mt-3">
+      
                   <div class="name-product">
-                    <p>Nome Prodotto: {{$product->name}}</p>
+                    <p><strong>Nome Prodotto:</strong> {{$product->name}}</p>
                   </div>
                   <div class="material-product">
-                    <p>Materiale: {{$product->material}}</p>
+                    <p><strong>Materiale:</strong> {{$product->material}}</p>
                   </div>
                   <div class="size-product">
-                    <p>Dimensioni: {{$product->size}} cm</p>
+                    <p><strong>Dimensioni:</strong> {{$product->size}} cm</p>
                   </div>
                   <div class="description-product">
-                   <p>Descrizione: {{$product->description}}</p> 
+                   <p><strong>Descrizione:</strong> {{$product->description}}</p> 
                   </div>
                   <div class="oldPrice-product">
-                   <p>Prezzo Precedente: <del>{{$product->old_price}}</del> €</p> 
+                   <p><strong>Prezzo Precedente:</strong> <del>{{$product->old_price}}</del> €</p> 
                   </div>
                   <div class="price-product">
-                   <p>Prezzo Attuale: {{$product->price}} €</p> 
+                   <p><strong>Prezzo Attuale:</strong> {{$product->price}} €</p> 
                   </div>
                   @if ($product->available)
                   <span class="badge badge-pill badge-success">Disponibile</span>
@@ -76,8 +74,8 @@
                   <span class="badge badge-pill badge-danger">Terminato</span>
                   @endif
                  
+              
                 </div>
-
               </div>
         </div>
     </div>
