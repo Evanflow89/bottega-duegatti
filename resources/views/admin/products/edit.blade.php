@@ -41,6 +41,13 @@
                 @enderror
                   </div>
                   <div class="form-group">
+                    <label for="old_price">Prezzo Precedente €</label>
+                    <input type="text" class="form-control @error('old_price') is-invalid @enderror" id="old_price" name="old_price" value="{{old('old_price', $product->old_price)}}">
+                    @error('old_price')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                  </div>
+                  <div class="form-group">
                     <label for="price">Prezzo €</label>
                     <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{old('price', $product->price)}}">
                     @error('price')

@@ -40,6 +40,13 @@
                 @enderror
                   </div>
                   <div class="form-group">
+                    <label for="old_price">Prezzo Precedente €</label>
+                    <input type="text" class="form-control @error('old_price') is-invalid @enderror" id="old_price" name="old_price" value="{{old('old_price')}}">
+                    @error('old_price')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                  </div>
+                  <div class="form-group">
                     <label for="price">Prezzo €</label>
                     <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{old('price')}}">
                     @error('price')
@@ -49,9 +56,18 @@
 
                   <div class="form-group">
                     <label for="img">Immagini</label>
-                    <input type="file" class="form-control-file" id="img" name="img" value="{{old('img')}}">
-                    <input type="file" class="form-control-file" id="img_2" name="img_2" value="{{old('img_2')}}">
-                    <input type="file" class="form-control-file" id="img_3" name="img_3" value="{{old('img_3')}}">
+                    <input type="file" class="form-control-file @error('img') is-invalid @enderror" id="img" name="img" value="{{old('img')}}">
+                    @error('img')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                    <input type="file" class="form-control-file @error('img_2') is-invalid @enderror" id="img_2" name="img_2" value="{{old('img_2')}}">
+                    @error('img_2')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                    <input type="file" class="form-control-file @error('img_3') is-invalid @enderror" id="img_3" name="img_3" value="{{old('img_3')}}">
+                    @error('img_3')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 </div>
       
                 <div class="form-group form-check">
