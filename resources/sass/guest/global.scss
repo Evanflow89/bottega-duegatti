@@ -1,0 +1,8 @@
+@import './global-parts/variables';
+@import './global-parts/typography';
+
+body {
+    background-color: var(--smoky-black);
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
