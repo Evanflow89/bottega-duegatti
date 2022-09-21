@@ -28,7 +28,7 @@
                         <td>{{$product->id}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->material}}</td>
-                        <td class="text-truncate">{{$product->description}}</td>
+                        <td class="text-truncate" style="max-width: 250px">{{$product->description}}</td>
                         <td>{{$product->price}}</td>
                         <td>
                             @if ($product->available)
