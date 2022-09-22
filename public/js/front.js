@@ -2000,11 +2000,6 @@ __webpack_require__.r(__webpack_exports__);
     BaseHeader: _components_macro_BaseHeader_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     HeroMain: _components_sections_HeroMain_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     BaseMain: _components_macro_BaseMain_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  },
-  data: function data() {
-    return {
-      products: []
-    };
   }
 });
 
@@ -2027,7 +2022,12 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "card"
-  }, [_c("h3", [_vm._v(_vm._s(_vm.item.name))]), _vm._v(" "), _c("div", {
+  }, [_c("img", {
+    attrs: {
+      src: _vm.item.img_path,
+      alt: ""
+    }
+  }), _vm._v(" "), _c("h3", [_vm._v(_vm._s(_vm.item.name))]), _vm._v(" "), _c("div", {
     staticClass: "card-content"
   }, [_vm._v("\n    " + _vm._s(_vm.item.description) + "\n  ")])]);
 };
@@ -2151,7 +2151,7 @@ var staticRenderFns = [function () {
   return _c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-12 text-center"
+    staticClass: "col-12 text-center p-5"
   }, [_c("h1", [_vm._v("I nostri Prodotti")])])]);
 }];
 render._withStripped = true;
@@ -6606,7 +6606,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".card[data-v-00be596c] {\n  background-color: #fff;\n  border-radius: 1.25rem;\n  padding: 0.625rem;\n  box-shadow: 0 0 5px 2px #ddd;\n}", ""]);
+exports.push([module.i, ".card[data-v-00be596c] {\n  background-color: #000;\n  border-radius: 1.25rem;\n  padding: 0.625rem;\n  box-shadow: 0 0 5px 2px #ddd;\n}", ""]);
 
 // exports
 

@@ -1,5 +1,6 @@
 .<template>
   <div class="card">
+    <img :src="item.img_path" alt="" />
     <h3>{{ item.name }}</h3>
     <div class="card-content">
       {{ item.description }}
@@ -16,7 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  background-color: #fff;
+  background-color: #000;
   border-radius: 1.25rem;
   padding: 0.625rem;
   box-shadow: 0 0 5px 2px #ddd;
