@@ -24,7 +24,14 @@
           totam quod nam dignissimos neque ipsam, velit eaque excepturi
           nesciunt.
         </div>
-        <div class="col-12 col-xl-6 pt-5 d-flex justify-content-center">
+        <div
+          class="
+            col-12 col-xl-6
+            d-flex
+            justify-content-center
+            align-items-center
+          "
+        >
           <img
             class="img-hero img-fluid"
             src="../img/carter-yocham-JTuuDH9uFlg-unsplash.jpg"
