@@ -1,6 +1,8 @@
 .<template>
   <div class="card">
-    <img :src="item.img_path" alt="" />
+    <div class="image-card">
+      <img class="img-fluid" :src="item.img_path" alt="" />
+    </div>
     <h3>{{ item.name }}</h3>
     <div class="card-content">
       {{ item.description }}
@@ -22,4 +24,5 @@ export default {
   padding: 0.625rem;
   box-shadow: 0 0 5px 2px #ddd;
 }
+//
 </style>

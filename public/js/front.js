@@ -2022,12 +2022,15 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "card"
+  }, [_c("div", {
+    staticClass: "image-card"
   }, [_c("img", {
+    staticClass: "img-fluid",
     attrs: {
       src: _vm.item.img_path,
       alt: ""
     }
-  }), _vm._v(" "), _c("h3", [_vm._v(_vm._s(_vm.item.name))]), _vm._v(" "), _c("div", {
+  })]), _vm._v(" "), _c("h3", [_vm._v(_vm._s(_vm.item.name))]), _vm._v(" "), _c("div", {
     staticClass: "card-content"
   }, [_vm._v("\n    " + _vm._s(_vm.item.description) + "\n  ")])]);
 };
@@ -2134,14 +2137,17 @@ var render = function render() {
 
   return _c("main", [_c("div", {
     staticClass: "container"
-  }, [_vm._m(0), _vm._v(" "), _vm._l(_vm.products, function (product) {
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "row d-flex justify-content-center"
+  }, _vm._l(_vm.products, function (product) {
     return _c("BaseCard", {
       key: product.item,
+      staticClass: "col-12 col-md-5 col-xl-3 m-2",
       attrs: {
         item: product
       }
     });
-  })], 2)]);
+  }), 1)])]);
 };
 
 var staticRenderFns = [function () {
