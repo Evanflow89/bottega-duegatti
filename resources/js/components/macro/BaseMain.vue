@@ -6,11 +6,14 @@
           <h1>I nostri Prodotti</h1>
         </div>
       </div>
-      <BaseCard
-        v-for="product in products"
-        v-bind:item="product"
-        v-bind:key="product.item"
-      />
+      <div class="row d-flex justify-content-center">
+        <BaseCard
+          class="col-12 col-md-5 col-xl-3 m-2"
+          v-for="product in products"
+          v-bind:item="product"
+          v-bind:key="product.item"
+        />
+      </div>
     </div>
   </main>
 </template>
