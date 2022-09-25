@@ -2101,7 +2101,7 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Falegnameria di Drigo")]), _vm._v(" "), _c("button", {
+  }, [_vm._v("Bottega I Due Gatti")]), _vm._v(" "), _c("button", {
     staticClass: "navbar-toggler",
     attrs: {
       type: "button",
@@ -2267,10 +2267,7 @@ var staticRenderFns = [function () {
   return _c("section", {
     staticClass: "hero mt-2"
   }, [_c("div", {
-    staticClass: "container hero-section",
-    attrs: {
-      id: "#ChiSiamo"
-    }
+    staticClass: "container hero-section"
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {

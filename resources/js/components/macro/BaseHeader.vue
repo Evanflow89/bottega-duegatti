@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Falegnameria di Drigo</a>
+        <a class="navbar-brand" href="#">Bottega I Due Gatti</a>
         <button
           class="navbar-toggler"
           type="button"
