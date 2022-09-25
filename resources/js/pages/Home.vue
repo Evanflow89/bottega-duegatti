@@ -1,8 +1,8 @@
 <template>
-  <div class="container main-content" id="#Prodotti">
+  <div class="container main-content">
     <div class="row">
       <div class="col-12 text-center p-5">
-        <h1>I nostri Prodotti</h1>
+        <h1 id="#Prodotti">I nostri Prodotti</h1>
       </div>
     </div>
     <div class="row d-flex justify-content-center">

@@ -6,6 +6,7 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 import Home from "./pages/Home";
+import Page404 from "./pages/Page404"
 const router = new VueRouter({
     mode: "history",
     routes: [
@@ -13,6 +14,11 @@ const router = new VueRouter({
             path: "/",
             name: "home",
             component: Home
+        },
+        {
+            path: "/*",
+            name: "page-404",
+            component: Page404
         },
     ]
 });
