@@ -20,7 +20,7 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a class="nav-link active" aria-current="page" href="#ChiSiamo"
                 >Chi Siamo</a
               >
             </li>

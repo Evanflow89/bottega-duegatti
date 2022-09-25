@@ -3,9 +3,15 @@
     <div class="image-card d-flex justify-content-center align-items-center">
       <img :src="item.img_path" alt="" />
     </div>
-    <h3 class="text-center pt-2">{{ item.name }}</h3>
-    <div class="card-content text-center">
-      {{ item.description }}
+    <div class="name-card">
+      <h3 class="text-center pt-2">{{ item.name }}</h3>
+    </div>
+
+    <div class="prices">
+      <h5>
+        <del>{{ item.old_price }} €</del>
+      </h5>
+      <h4>{{ item.price }} €</h4>
     </div>
   </div>
 </template>
@@ -35,6 +41,15 @@ export default {
   max-width: 100%;
   vertical-align: middle;
   border-radius: 1.25rem;
+}
+
+.name-card {
+  display: flex;
+  flex-grow: 1;
+}
+
+del {
+  color: red;
 }
 //
 </style>

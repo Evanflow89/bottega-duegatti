@@ -2055,11 +2055,13 @@ var render = function render() {
       src: _vm.item.img_path,
       alt: ""
     }
-  })]), _vm._v(" "), _c("h3", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "name-card"
+  }, [_c("h3", {
     staticClass: "text-center pt-2"
-  }, [_vm._v(_vm._s(_vm.item.name))]), _vm._v(" "), _c("div", {
-    staticClass: "card-content text-center"
-  }, [_vm._v("\n    " + _vm._s(_vm.item.description) + "\n  ")])]);
+  }, [_vm._v(_vm._s(_vm.item.name))])]), _vm._v(" "), _c("div", {
+    staticClass: "prices"
+  }, [_c("h5", [_c("del", [_vm._v(_vm._s(_vm.item.old_price) + " €")])]), _vm._v(" "), _c("h4", [_vm._v(_vm._s(_vm.item.price) + " €")])])]);
 };
 
 var staticRenderFns = [];
@@ -2124,7 +2126,7 @@ var staticRenderFns = [function () {
     staticClass: "nav-link active",
     attrs: {
       "aria-current": "page",
-      href: "#"
+      href: "#ChiSiamo"
     }
   }, [_vm._v("Chi Siamo")])]), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
@@ -2265,9 +2267,12 @@ var staticRenderFns = [function () {
   return _c("section", {
     staticClass: "hero mt-2"
   }, [_c("div", {
-    staticClass: "container hero-section"
+    staticClass: "container hero-section",
+    attrs: {
+      id: "#ChiSiamo"
+    }
   }, [_c("div", {
-    staticClass: "row pt-5 pb-5"
+    staticClass: "row"
   }, [_c("div", {
     staticClass: "col-12 col-xl-6 d-flex align-items-center content-hero"
   }, [_vm._v("\n        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,\n        odit dolore. Veniam placeat itaque mollitia dignissimos sapiente\n        laboriosam ex fugit, fugiat animi molestiae incidunt dolore debitis\n        optio maxime deserunt? Laudantium. Rerum tenetur sunt similique\n        minima. Nesciunt praesentium minus mollitia dolorem delectus, quas\n        adipisci ullam odio, fuga consectetur veniam, cupiditate ipsam unde\n        tenetur. Sed illo et, nihil recusandae quos assumenda tenetur! Sequi\n        fugit laboriosam corrupti, repudiandae nulla odio natus eius obcaecati\n        error minima facilis similique adipisci hic fuga? Exercitationem sunt\n        eveniet tempora necessitatibus ea officia? Quasi voluptas ipsa aut\n        officia nihil? Est et quas dignissimos a suscipit doloremque ex culpa\n        dicta eius magnam vel sed corporis neque officiis iure quis velit cum\n        harum qui, reiciendis quidem quaerat ipsam? Fuga, similique ex. Veniam\n        eum temporibus totam amet blanditiis quibusdam recusandae facere ipsa\n        dolorum corrupti, odit quos fugiat, error illum voluptate iure. Dicta\n        doloremque molestias in placeat sint illum maiores enim nobis\n        consectetur. Odit debitis alias quam veniam numquam. Nulla maiores vel\n        ducimus iusto quos at cumque nostrum a quidem iste recusandae voluptas\n        totam quod nam dignissimos neque ipsam, velit eaque excepturi\n        nesciunt.\n      ")]), _vm._v(" "), _c("div", {
@@ -6687,7 +6692,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".card[data-v-00be596c] {\n  background-color: inherit;\n  border-radius: 1.25rem;\n  padding: 0.625rem;\n  box-shadow: 0 0 5px 2px #ddd;\n}\n.image-card[data-v-00be596c] {\n  max-height: 21.875rem;\n  height: 100%;\n}\n.image-card img[data-v-00be596c] {\n  max-height: 100%;\n  max-width: 100%;\n  vertical-align: middle;\n  border-radius: 1.25rem;\n}", ""]);
+exports.push([module.i, ".card[data-v-00be596c] {\n  background-color: inherit;\n  border-radius: 1.25rem;\n  padding: 0.625rem;\n  box-shadow: 0 0 5px 2px #ddd;\n}\n.image-card[data-v-00be596c] {\n  max-height: 21.875rem;\n  height: 100%;\n}\n.image-card img[data-v-00be596c] {\n  max-height: 100%;\n  max-width: 100%;\n  vertical-align: middle;\n  border-radius: 1.25rem;\n}\n.name-card[data-v-00be596c] {\n  display: flex;\n  flex-grow: 1;\n}\ndel[data-v-00be596c] {\n  color: red;\n}", ""]);
 
 // exports
 

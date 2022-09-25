@@ -1,7 +1,7 @@
 <template>
   <section class="hero mt-2">
-    <div class="container hero-section">
-      <div class="row pt-5 pb-5">
+    <div class="container hero-section" id="#ChiSiamo">
+      <div class="row">
         <div class="col-12 col-xl-6 d-flex align-items-center content-hero">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,
           odit dolore. Veniam placeat itaque mollitia dignissimos sapiente
