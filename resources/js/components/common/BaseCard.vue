@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  background-color: #000;
+  background-color: inherit;
   border-radius: 1.25rem;
   padding: 0.625rem;
   box-shadow: 0 0 5px 2px #ddd;

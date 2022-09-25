@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="container">
+    <div class="container main-content" id="#Prodotti">
       <div class="row">
         <div class="col-12 text-center p-5">
           <h1>I nostri Prodotti</h1>
@@ -30,6 +30,14 @@ export default {
       products: [],
     };
   },
+  mounted() {
+    gsap.to(".main-content", {
+      duration: 1,
+      y: 0,
+      ease: "elastic",
+      delay: 2.5,
+    });
+  },
   created() {
     axios
       .get("http://127.0.0.1:8000/api/products")
@@ -44,4 +52,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+main {
+  background-image: url("../img/miri-mina-EXMCLru2dzs-unsplash.jpg");
+  background-size: cover;
+}
+.main-content {
+  transform: translateY(100%);
+  background-color: rgba($color: #000000, $alpha: 0.7);
+}
 </style>

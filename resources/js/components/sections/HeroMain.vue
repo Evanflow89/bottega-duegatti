@@ -2,7 +2,7 @@
   <section class="hero mt-2">
     <div class="container hero-section">
       <div class="row pt-5 pb-5">
-        <div class="col-12 col-xl-6 d-flex align-items-center">
+        <div class="col-12 col-xl-6 d-flex align-items-center content-hero">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,
           odit dolore. Veniam placeat itaque mollitia dignissimos sapiente
           laboriosam ex fugit, fugiat animi molestiae incidunt dolore debitis
@@ -30,6 +30,7 @@
             d-flex
             justify-content-center
             align-items-center
+            img-hero
           "
         >
           <img
@@ -58,6 +59,8 @@ export default {
 
 .hero-section {
   background-color: rgba($color: #000000, $alpha: 0.3);
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .img-hero {

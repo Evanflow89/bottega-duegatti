@@ -1,7 +1,7 @@
 <template>
   <section class="heroBottom">
     <div class="container heroBottom-section">
-      <div class="row pt-5 pb-5">
+      <div class="row">
         <div
           class="
             col-12 col-xl-6
@@ -16,7 +16,7 @@
             alt=""
           />
         </div>
-        <div class="col-12 col-xl-6 d-flex align-items-center">
+        <div class="col-12 col-xl-6 d-flex align-items-center content-hero2">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,
           odit dolore. Veniam placeat itaque mollitia dignissimos sapiente
           laboriosam ex fugit, fugiat animi molestiae incidunt dolore debitis
@@ -49,6 +49,8 @@ export default {
 
 .heroBottom-section {
   background-color: rgba($color: #000000, $alpha: 0.3);
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .img-heroBottom {
