@@ -2,7 +2,15 @@
   <section class="hero mt-2">
     <div class="container hero-section">
       <div class="row">
-        <div class="col-12 col-xl-6 d-flex align-items-center content-hero">
+        <div
+          class="
+            col-12 col-xl-6
+            order-6 order-xl-1
+            d-flex
+            align-items-center
+            content-hero
+          "
+        >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,
           odit dolore. Veniam placeat itaque mollitia dignissimos sapiente
           laboriosam ex fugit, fugiat animi molestiae incidunt dolore debitis
@@ -27,6 +35,31 @@
         <div
           class="
             col-12 col-xl-6
+            order-1 order-xl-6
+            pb-5
+            d-flex
+            align-items-center
+            justify-content-center
+          "
+        >
+          <h2>Chi</h2>
+        </div>
+      </div>
+      <div class="row image-container">
+        <div
+          class="
+            col-12 col-xl-6
+            pb-5
+            d-flex
+            align-items-center
+            justify-content-center
+          "
+        >
+          <h2>Siamo</h2>
+        </div>
+        <div
+          class="
+            col-12 col-xl-6
             d-flex
             justify-content-center
             align-items-center
@@ -34,10 +67,26 @@
           "
         >
           <img
-            class="img-hero img-fluid"
+            class="img-hero img-fluid d-flex align-items-center"
             src="../img/carter-yocham-JTuuDH9uFlg-unsplash.jpg"
             alt=""
           />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 d-flex align-items-center content-hero2">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,
+          odit dolore. Veniam placeat itaque mollitia dignissimos sapiente
+          laboriosam ex fugit, fugiat animi molestiae incidunt dolore debitis
+          optio maxime deserunt? Laudantium. Rerum tenetur sunt similique
+          minima. Nesciunt praesentium minus mollitia dolorem delectus, quas
+          adipisci ullam odio, fuga consectetur veniam, cupiditate ipsam unde
+          tenetur. Sed illo et, nihil recusandae quos assumenda tenetur! Sequi
+          fugit laboriosam corrupti, repudiandae nulla odio natus eius obcaecati
+          error minima facilis similique adipisci hic fuga? Exercitationem sunt
+          eveniet tempora necessitatibus ea officia? Quasi voluptas ipsa aut
+          officia nihil?
         </div>
       </div>
     </div>
@@ -59,12 +108,20 @@ export default {
 
 .hero-section {
   background-color: rgba($color: #000000, $alpha: 0.3);
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
 }
 
 .img-hero {
   max-height: 400px;
   border-radius: 10px;
+}
+
+.image-container {
+  padding-top: 6.25rem;
+}
+
+.content-hero2 {
+  padding-top: 6.25rem;
 }
 </style>
