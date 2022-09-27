@@ -6,6 +6,7 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 import Home from "./pages/Home";
+import SingleProduct from "./pages/SingleProduct";
 import Page404 from "./pages/Page404"
 const router = new VueRouter({
     mode: "history",
@@ -14,6 +15,11 @@ const router = new VueRouter({
             path: "/",
             name: "home",
             component: Home
+        },
+        {
+            path: "/products/:id",
+            name: "single-product",
+            component: SingleProduct
         },
         {
             path: "/*",
