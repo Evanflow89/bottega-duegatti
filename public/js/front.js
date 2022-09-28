@@ -2090,7 +2090,16 @@ var render = function render() {
     staticClass: "name-card"
   }, [_c("h3", {
     staticClass: "text-center pt-2"
-  }, [_vm._v(_vm._s(_vm.item.name))])]), _vm._v(" "), _c("router-link", {
+  }, [_vm._v(_vm._s(_vm.item.name))])]), _vm._v(" "), _c("div", {
+    staticClass: "prices"
+  }, [_c("h5", [_c("del", [_vm._v(_vm._s(_vm.item.old_price) + " €")])]), _vm._v(" "), _c("div", {
+    staticClass: "row d-flex align-items-center"
+  }, [_c("div", {
+    staticClass: "col-6 d-flex align-items-center"
+  }, [_c("h4", [_vm._v(_vm._s(_vm.item.price) + " €")])]), _vm._v(" "), _c("div", {
+    staticClass: "col-6 d-flex align-items-center"
+  }, [_c("router-link", {
+    staticClass: "btn btn-outline-info",
     attrs: {
       to: {
         name: "single-product",
@@ -2099,9 +2108,7 @@ var render = function render() {
         }
       }
     }
-  }, [_vm._v("Vai Alla Scheda")]), _vm._v(" "), _c("div", {
-    staticClass: "prices"
-  }, [_c("h5", [_c("del", [_vm._v(_vm._s(_vm.item.old_price) + " €")])]), _vm._v(" "), _c("h4", [_vm._v(_vm._s(_vm.item.price) + " €")])])], 1);
+  }, [_vm._v("Vai Alla Scheda")])], 1)])])]);
 };
 
 var staticRenderFns = [];
@@ -6781,7 +6788,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".card[data-v-00be596c] {\n  background-color: inherit;\n  border-radius: 1.25rem;\n  padding: 0.625rem;\n  box-shadow: 0 0 5px 2px #ddd;\n}\n.image-card[data-v-00be596c] {\n  max-height: 21.875rem;\n  height: 100%;\n}\n.image-card img[data-v-00be596c] {\n  max-height: 100%;\n  max-width: 100%;\n  vertical-align: middle;\n  border-radius: 1.25rem;\n}\n.name-card[data-v-00be596c] {\n  display: flex;\n  flex-grow: 1;\n}\ndel[data-v-00be596c] {\n  color: red;\n}", ""]);
+exports.push([module.i, ".card[data-v-00be596c] {\n  background-color: inherit;\n  border-radius: 1.25rem;\n  padding: 0.625rem;\n  box-shadow: 0 0 5px 2px #ddd;\n}\na[data-v-00be596c] {\n  text-decoration: none;\n  color: white;\n  font-size: 1.25rem;\n}\nh4[data-v-00be596c],\nh5[data-v-00be596c] {\n  margin-bottom: 0;\n}\n.image-card[data-v-00be596c] {\n  max-height: 21.875rem;\n  height: 100%;\n}\n.image-card img[data-v-00be596c] {\n  max-height: 100%;\n  max-width: 100%;\n  vertical-align: middle;\n  border-radius: 1.25rem;\n}\n.btn[data-v-00be596c] {\n  border-radius: 1.25rem;\n}\n.name-card[data-v-00be596c] {\n  display: flex;\n  flex-grow: 1;\n}\ndel[data-v-00be596c] {\n  color: red;\n}", ""]);
 
 // exports
 

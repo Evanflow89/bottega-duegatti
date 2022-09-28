@@ -6,14 +6,23 @@
     <div class="name-card">
       <h3 class="text-center pt-2">{{ item.name }}</h3>
     </div>
-    <router-link :to="{ name: 'single-product', params: { id: item.id } }"
-      >Vai Alla Scheda</router-link
-    >
+
     <div class="prices">
       <h5>
         <del>{{ item.old_price }} €</del>
       </h5>
-      <h4>{{ item.price }} €</h4>
+      <div class="row d-flex align-items-center">
+        <div class="col-6 d-flex align-items-center">
+          <h4>{{ item.price }} €</h4>
+        </div>
+        <div class="col-6 d-flex align-items-center">
+          <router-link
+            :to="{ name: 'single-product', params: { id: item.id } }"
+            class="btn btn-outline-info"
+            >Vai Alla Scheda</router-link
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -33,6 +42,17 @@ export default {
   box-shadow: 0 0 5px 2px #ddd;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.25rem;
+}
+
+h4,
+h5 {
+  margin-bottom: 0;
+}
+
 .image-card {
   max-height: 21.875rem;
   height: 100%;
@@ -42,6 +62,10 @@ export default {
   max-height: 100%;
   max-width: 100%;
   vertical-align: middle;
+  border-radius: 1.25rem;
+}
+
+.btn {
   border-radius: 1.25rem;
 }
 
