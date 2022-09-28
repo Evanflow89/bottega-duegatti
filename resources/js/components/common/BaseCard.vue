@@ -6,7 +6,9 @@
     <div class="name-card">
       <h3 class="text-center pt-2">{{ item.name }}</h3>
     </div>
-
+    <router-link :to="{ name: 'single-product', params: { id: item.id } }"
+      >Vai Alla Scheda</router-link
+    >
     <div class="prices">
       <h5>
         <del>{{ item.old_price }} €</del>

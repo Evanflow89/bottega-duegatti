@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bottega Due Gatti</title>
     <link rel="stylesheet" href="{{asset('css/front.css')}}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 </head>
 <body>
     <div id="app"></div>
