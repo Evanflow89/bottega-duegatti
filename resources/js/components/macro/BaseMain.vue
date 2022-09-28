@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main id="Prodotti">
     <router-view></router-view>
   </main>
 </template>
@@ -11,4 +11,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+main {
+  background-color: var(--smoky-black);
+}
 </style>

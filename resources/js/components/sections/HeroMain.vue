@@ -1,5 +1,5 @@
 <template>
-  <section class="hero mt-2">
+  <section class="hero mt-2" id="ChiSiamo">
     <div class="container hero-section">
       <div class="row">
         <div

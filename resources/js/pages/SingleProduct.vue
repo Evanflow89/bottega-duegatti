@@ -74,6 +74,17 @@
         <div class="price-product">
           <p><strong>Prezzo Attuale:</strong> {{ product.price }} €</p>
         </div>
+
+        <div class="available pt-3">
+          <span v-if="product.available" class="badge badge-pill badge-success"
+            >Disponibile</span
+          >
+          <span v-else class="badge badge-pill badge-danger">Terminato</span>
+        </div>
+
+        <div class="mt-4">
+          <router-link :to="{ name: 'home' }">Torna ai Prodotti</router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -96,4 +107,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.carousel-item {
+  height: 360px;
+}
+
+span {
+  font-size: 1.125rem;
+}
+
+a {
+  font-size: 1.375rem;
+}
+
+.carousel-item img {
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  object-fit: contain;
+}
 </style>
