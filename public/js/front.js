@@ -2377,10 +2377,124 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "container"
-  }, [_c("h1", [_vm._v(_vm._s(_vm.product.name))])]);
+  }, [_c("h1", {
+    staticClass: "text-center p-5"
+  }, [_vm._v(_vm._s(_vm.product.name))]), _vm._v(" "), _c("div", {
+    staticClass: "row d-flex justify-content-center"
+  }, [_c("div", {
+    staticClass: "col-4"
+  }, [_c("div", {
+    staticClass: "carousel slide",
+    attrs: {
+      id: "carouselExampleIndicators",
+      "data-ride": "carousel",
+      "data-interval": "false"
+    }
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "carousel-inner"
+  }, [_c("div", {
+    staticClass: "carousel-item active"
+  }, [_c("img", {
+    staticClass: "d-block w-100",
+    attrs: {
+      src: _vm.product.img_path,
+      alt: "..."
+    }
+  })]), _vm._v(" "), _vm.product.img_2 ? _c("div", {
+    staticClass: "carousel-item"
+  }, [_c("img", {
+    staticClass: "d-block w-100",
+    attrs: {
+      src: _vm.product.img_path2,
+      alt: "..."
+    }
+  })]) : _vm._e(), _vm._v(" "), _vm.product.img_3 ? _c("div", {
+    staticClass: "carousel-item"
+  }, [_c("img", {
+    staticClass: "d-block w-100",
+    attrs: {
+      src: _vm.product.img_path3,
+      alt: "..."
+    }
+  })]) : _vm._e()]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)])]), _vm._v(" "), _c("div", {
+    staticClass: "col-4"
+  }, [_c("div", {
+    staticClass: "name-product"
+  }, [_c("p", [_c("strong", [_vm._v("Nome Prodotto:")]), _vm._v(" " + _vm._s(_vm.product.name))])]), _vm._v(" "), _c("div", {
+    staticClass: "material-product"
+  }, [_c("p", [_c("strong", [_vm._v("Materiale:")]), _vm._v(" " + _vm._s(_vm.product.material))])]), _vm._v(" "), _c("div", {
+    staticClass: "size-product"
+  }, [_c("p", [_c("strong", [_vm._v("Dimensioni:")]), _vm._v(" " + _vm._s(_vm.product.size) + " cm")])]), _vm._v(" "), _c("div", {
+    staticClass: "description-product"
+  }, [_c("p", [_c("strong", [_vm._v("Descrizione:")]), _vm._v(" " + _vm._s(_vm.product.description))])]), _vm._v(" "), _c("div", {
+    staticClass: "oldPrice-product"
+  }, [_c("p", [_c("strong", [_vm._v("Prezzo Precedente:")]), _vm._v(" "), _c("del", [_vm._v(_vm._s(_vm.product.old_price))]), _vm._v(" €\n        ")])]), _vm._v(" "), _c("div", {
+    staticClass: "price-product"
+  }, [_c("p", [_c("strong", [_vm._v("Prezzo Attuale:")]), _vm._v(" " + _vm._s(_vm.product.price) + " €")])])])])]);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("ol", {
+    staticClass: "carousel-indicators"
+  }, [_c("li", {
+    staticClass: "active",
+    attrs: {
+      "data-target": "#carouselExampleIndicators",
+      "data-slide-to": "0"
+    }
+  }), _vm._v(" "), _c("li", {
+    attrs: {
+      "data-target": "#carouselExampleIndicators",
+      "data-slide-to": "1"
+    }
+  }), _vm._v(" "), _c("li", {
+    attrs: {
+      "data-target": "#carouselExampleIndicators",
+      "data-slide-to": "2"
+    }
+  })]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("a", {
+    staticClass: "carousel-control-prev",
+    attrs: {
+      href: "#carouselExampleIndicators",
+      role: "button",
+      "data-slide": "prev"
+    }
+  }, [_c("span", {
+    staticClass: "carousel-control-prev-icon",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Previous")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("a", {
+    staticClass: "carousel-control-next",
+    attrs: {
+      href: "#carouselExampleIndicators",
+      role: "button",
+      "data-slide": "next"
+    }
+  }, [_c("span", {
+    staticClass: "carousel-control-next-icon",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" "), _c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Next")])]);
+}];
 render._withStripped = true;
 
 
