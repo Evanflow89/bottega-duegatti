@@ -28,14 +28,6 @@ export default {
       products: [],
     };
   },
-  mounted() {
-    gsap.to(".main-content", {
-      duration: 1,
-      y: 0,
-      ease: "elastic",
-      delay: 2.5,
-    });
-  },
   created() {
     axios
       .get("http://127.0.0.1:8000/api/products")
@@ -55,7 +47,6 @@ main {
   background-size: cover;
 }
 .main-content {
-  transform: translateY(100%);
   background-color: rgba($color: #000000, $alpha: 0.7);
 }
 </style>

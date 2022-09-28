@@ -1981,14 +1981,6 @@ __webpack_require__.r(__webpack_exports__);
       products: []
     };
   },
-  mounted: function mounted() {
-    gsap.to(".main-content", {
-      duration: 1,
-      y: 0,
-      ease: "elastic",
-      delay: 2.5
-    });
-  },
   created: function created() {
     var _this = this;
 
@@ -6849,7 +6841,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-b3c5cf30] {\n  background-image: url(" + escape(__webpack_require__(/*! ../components/img/miri-mina-EXMCLru2dzs-unsplash.jpg */ "./resources/js/components/img/miri-mina-EXMCLru2dzs-unsplash.jpg")) + ");\n  background-size: cover;\n}\n.main-content[data-v-b3c5cf30] {\n  transform: translateY(100%);\n  background-color: rgba(0, 0, 0, 0.7);\n}", ""]);
+exports.push([module.i, "main[data-v-b3c5cf30] {\n  background-image: url(" + escape(__webpack_require__(/*! ../components/img/miri-mina-EXMCLru2dzs-unsplash.jpg */ "./resources/js/components/img/miri-mina-EXMCLru2dzs-unsplash.jpg")) + ");\n  background-size: cover;\n}\n.main-content[data-v-b3c5cf30] {\n  background-color: rgba(0, 0, 0, 0.7);\n}", ""]);
 
 // exports
 
