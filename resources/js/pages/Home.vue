@@ -43,6 +43,6 @@ export default {
 
 <style lang="scss" scoped>
 .main-content {
-  background-color: rgba($color: #000000, $alpha: 0.7);
+  background-color: rgba($color: #000000, $alpha: 0.4);
 }
 </style>

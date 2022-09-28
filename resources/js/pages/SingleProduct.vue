@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container product">
     <h1 class="text-center p-5">{{ product.name }}</h1>
     <div class="row d-flex justify-content-center">
       <div class="col-4">
@@ -107,6 +107,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.product {
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  padding-bottom: 6.25rem;
+}
 .carousel-item {
   height: 360px;
 }

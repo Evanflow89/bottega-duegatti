@@ -2078,7 +2078,7 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "card"
+    staticClass: "card mb-5"
   }, [_c("div", {
     staticClass: "image-card d-flex justify-content-center align-items-center"
   }, [_c("img", {
@@ -2379,7 +2379,7 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "container"
+    staticClass: "container product"
   }, [_c("h1", {
     staticClass: "text-center p-5"
   }, [_vm._v(_vm._s(_vm.product.name))]), _vm._v(" "), _c("div", {
@@ -6953,12 +6953,13 @@ exports.push([module.i, "header[data-v-8a2cb668] {\n  font-family: \"Amatic SC\"
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "main[data-v-cd0ca090] {\n  background-color: var(--smoky-black);\n}", ""]);
+exports.push([module.i, "main[data-v-cd0ca090] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/alex-azabache-rRg87xGylnk-unsplash.jpg */ "./resources/js/components/img/alex-azabache-rRg87xGylnk-unsplash.jpg")) + ");\n  background-position: center;\n}", ""]);
 
 // exports
 
@@ -6978,7 +6979,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".hero[data-v-48008a0e] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/hero.jpg */ "./resources/js/components/img/hero.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n}\n.hero-section[data-v-48008a0e] {\n  background-color: rgba(0, 0, 0, 0.3);\n  padding-top: 6.25rem;\n  padding-bottom: 6.25rem;\n}\n.img-hero[data-v-48008a0e] {\n  max-height: 400px;\n  border-radius: 10px;\n}\n.image-container[data-v-48008a0e] {\n  padding-top: 6.25rem;\n}\n.content-hero2[data-v-48008a0e] {\n  padding-top: 6.25rem;\n}", ""]);
+exports.push([module.i, ".hero[data-v-48008a0e] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/hero.jpg */ "./resources/js/components/img/hero.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n}\n.hero-section[data-v-48008a0e] {\n  background-color: rgba(0, 0, 0, 0.4);\n  padding-top: 6.25rem;\n  padding-bottom: 6.25rem;\n}\n.img-hero[data-v-48008a0e] {\n  max-height: 400px;\n  border-radius: 10px;\n}\n.image-container[data-v-48008a0e] {\n  padding-top: 6.25rem;\n}\n.content-hero2[data-v-48008a0e] {\n  padding-top: 6.25rem;\n}", ""]);
 
 // exports
 
@@ -6997,7 +6998,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main-content[data-v-b3c5cf30] {\n  background-color: rgba(0, 0, 0, 0.7);\n}", ""]);
+exports.push([module.i, ".main-content[data-v-b3c5cf30] {\n  background-color: rgba(0, 0, 0, 0.4);\n}", ""]);
 
 // exports
 
@@ -7016,7 +7017,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".carousel-item[data-v-344c8d4e] {\n  height: 360px;\n}\nspan[data-v-344c8d4e] {\n  font-size: 1.125rem;\n}\na[data-v-344c8d4e] {\n  font-size: 1.375rem;\n}\n.carousel-item img[data-v-344c8d4e] {\n  max-height: 100%;\n  max-width: 100%;\n  vertical-align: middle;\n  -o-object-fit: contain;\n     object-fit: contain;\n}", ""]);
+exports.push([module.i, ".product[data-v-344c8d4e] {\n  background-color: rgba(0, 0, 0, 0.4);\n  padding-bottom: 6.25rem;\n}\n.carousel-item[data-v-344c8d4e] {\n  height: 360px;\n}\nspan[data-v-344c8d4e] {\n  font-size: 1.125rem;\n}\na[data-v-344c8d4e] {\n  font-size: 1.375rem;\n}\n.carousel-item img[data-v-344c8d4e] {\n  max-height: 100%;\n  max-width: 100%;\n  vertical-align: middle;\n  -o-object-fit: contain;\n     object-fit: contain;\n}", ""]);
 
 // exports
 
@@ -37017,6 +37018,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_BaseCard_vue_vue_type_template_id_00be596c_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/img/alex-azabache-rRg87xGylnk-unsplash.jpg":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/img/alex-azabache-rRg87xGylnk-unsplash.jpg ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/alex-azabache-rRg87xGylnk-unsplash.jpg?fd1829f11708874812e3ccee636cfb7d";
 
 /***/ }),
 

@@ -12,6 +12,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  background-color: var(--smoky-black);
+  background-image: url("../img/alex-azabache-rRg87xGylnk-unsplash.jpg");
+  background-position: center;
 }
 </style>

@@ -1,5 +1,5 @@
 .<template>
-  <div class="card">
+  <div class="card mb-5">
     <div class="image-card d-flex justify-content-center align-items-center">
       <img :src="item.img_path" alt="" />
     </div>

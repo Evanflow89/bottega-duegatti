@@ -107,7 +107,7 @@ export default {
 }
 
 .hero-section {
-  background-color: rgba($color: #000000, $alpha: 0.3);
+  background-color: rgba($color: #000000, $alpha: 0.4);
   padding-top: 6.25rem;
   padding-bottom: 6.25rem;
 }
