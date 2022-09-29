@@ -110,6 +110,8 @@ export default {
 .product {
   background-color: rgba($color: #000000, $alpha: 0.4);
   padding-bottom: 6.25rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 5px 2px #ddd;
 }
 .carousel-item {
   height: 360px;
