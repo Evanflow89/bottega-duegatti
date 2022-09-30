@@ -8,17 +8,14 @@
       </div>
       <div class="row d-flex justify-content-center">
         <div class="col-8">
-          <form
-            method="POST"
-            action="mailto: ivanbaragone@gmail.com"
-            enctype="multipart/form-data"
-          >
+          <form @submit.prevent="sendEmail">
             <div class="form-group">
               <label for="tuoNome">Il Tuo Nome</label>
               <input
                 type="text"
+                v-model="name"
+                name="name"
                 class="form-control"
-                id="tuoNome"
                 placeholder="Inserisci il tuo nome"
               />
             </div>
@@ -26,8 +23,9 @@
               <label for="exampleInputEmail1">Il Tuo Indirizzo Email</label>
               <input
                 type="email"
+                v-model="email"
+                name="email"
                 class="form-control"
-                id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Inserisci la tua email"
               />
@@ -38,16 +36,14 @@
             </div>
             <label>Seleziona il prodotto:</label>
 
-            <div class="form-check form-check-inline row d-flex flex-wrap">
-              <div
-                v-for="product in products"
-                class="d-flex col-5 col-md-4 pt-2"
-              >
+            <div class="form-check form-check-inline">
+              <div v-for="product in products">
                 <input
                   class="form-check-input"
+                  v-model="checkedProducts"
                   type="checkbox"
-                  id="product.id"
-                  value="product.name"
+                  :id="product.id"
+                  :value="product.name"
                 />
                 <label class="form-check-label" for="inlineCheckbox1">{{
                   product.name
@@ -55,16 +51,20 @@
               </div>
             </div>
 
+            <div>Checked names: {{ checkedProducts }}</div>
             <div class="form-group pt-3">
               <label for="exampleFormControlTextarea1">Il Tuo Messaggio</label>
               <textarea
+                name="message"
+                v-model="message"
                 class="form-control"
-                id="exampleFormControlTextarea1"
                 rows="3"
               ></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+            <button type="submit" value="send" class="btn btn-primary mt-4">
+              Submit
+            </button>
           </form>
         </div>
       </div>
@@ -73,12 +73,43 @@
 </template>
 
 <script>
+import emailjs from "emailjs-com";
 export default {
   name: "ContactUs",
   data() {
     return {
       products: [],
+      name: "",
+      email: "",
+      message: "",
+      to_name: "Bottega i Due Gatti",
+      checkedProducts: [],
     };
+  },
+  methods: {
+    sendEmail(e) {
+      try {
+        emailjs.sendForm(
+          "service_o26hno8",
+          "template_kgnvz7c",
+          this.$refs.form,
+          "pYpaUviXY0oc4eRyf",
+          {
+            name: this.name,
+            checkedProducts: this.checkedProducts,
+            email: this.email,
+            message: this.message,
+          }
+        );
+      } catch (error) {
+        console.log({ error });
+      }
+      // Reset form field
+      this.name = "";
+      this.email = "";
+      this.message = "";
+      this.checkedProducts = "";
+    },
   },
   created() {
     axios

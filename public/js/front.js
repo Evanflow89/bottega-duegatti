@@ -1954,12 +1954,41 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var emailjs_com__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! emailjs-com */ "./node_modules/emailjs-com/es/index.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactUs",
   data: function data() {
     return {
-      products: []
+      products: [],
+      name: "",
+      email: "",
+      message: "",
+      to_name: "Bottega i Due Gatti",
+      checkedProducts: []
     };
+  },
+  methods: {
+    sendEmail: function sendEmail(e) {
+      try {
+        emailjs_com__WEBPACK_IMPORTED_MODULE_0__["default"].sendForm("service_o26hno8", "template_kgnvz7c", this.$refs.form, "pYpaUviXY0oc4eRyf", {
+          name: this.name,
+          checkedProducts: this.checkedProducts,
+          email: this.email,
+          message: this.message
+        });
+      } catch (error) {
+        console.log({
+          error: error
+        });
+      } // Reset form field
+
+
+      this.name = "";
+      this.email = "";
+      this.message = "";
+      this.checkedProducts = "";
+    }
   },
   created: function created() {
     var _this = this;
@@ -2280,22 +2309,112 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "col-8"
   }, [_c("form", {
-    attrs: {
-      method: "POST",
-      action: "mailto: ivanbaragone@gmail.com",
-      enctype: "multipart/form-data"
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.sendEmail.apply(null, arguments);
+      }
     }
-  }, [_vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("label", [_vm._v("Seleziona il prodotto:")]), _vm._v(" "), _c("div", {
-    staticClass: "form-check form-check-inline row d-flex flex-wrap"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "tuoNome"
+    }
+  }, [_vm._v("Il Tuo Nome")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.name,
+      expression: "name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      name: "name",
+      placeholder: "Inserisci il tuo nome"
+    },
+    domProps: {
+      value: _vm.name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.name = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleInputEmail1"
+    }
+  }, [_vm._v("Il Tuo Indirizzo Email")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.email,
+      expression: "email"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "email",
+      name: "email",
+      "aria-describedby": "emailHelp",
+      placeholder: "Inserisci la tua email"
+    },
+    domProps: {
+      value: _vm.email
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.email = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("small", {
+    staticClass: "form-text text-muted",
+    attrs: {
+      id: "emailHelp"
+    }
+  }, [_vm._v("Non condivideremo il tuo indirizzo email con nessun\n              altro.")])]), _vm._v(" "), _c("label", [_vm._v("Seleziona il prodotto:")]), _vm._v(" "), _c("div", {
+    staticClass: "form-check form-check-inline"
   }, _vm._l(_vm.products, function (product) {
-    return _c("div", {
-      staticClass: "d-flex col-5 col-md-4 pt-2"
-    }, [_c("input", {
+    return _c("div", [_c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: _vm.checkedProducts,
+        expression: "checkedProducts"
+      }],
       staticClass: "form-check-input",
       attrs: {
         type: "checkbox",
-        id: "product.id",
-        value: "product.name"
+        id: product.id
+      },
+      domProps: {
+        value: product.name,
+        checked: Array.isArray(_vm.checkedProducts) ? _vm._i(_vm.checkedProducts, product.name) > -1 : _vm.checkedProducts
+      },
+      on: {
+        change: function change($event) {
+          var $$a = _vm.checkedProducts,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false;
+
+          if (Array.isArray($$a)) {
+            var $$v = product.name,
+                $$i = _vm._i($$a, $$v);
+
+            if ($$el.checked) {
+              $$i < 0 && (_vm.checkedProducts = $$a.concat([$$v]));
+            } else {
+              $$i > -1 && (_vm.checkedProducts = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+            }
+          } else {
+            _vm.checkedProducts = $$c;
+          }
+        }
       }
     }), _vm._v(" "), _c("label", {
       staticClass: "form-check-label",
@@ -2303,12 +2422,40 @@ var render = function render() {
         "for": "inlineCheckbox1"
       }
     }, [_vm._v(_vm._s(product.name))])]);
-  }), 0), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("button", {
+  }), 0), _vm._v(" "), _c("div", [_vm._v("Checked names: " + _vm._s(_vm.checkedProducts))]), _vm._v(" "), _c("div", {
+    staticClass: "form-group pt-3"
+  }, [_c("label", {
+    attrs: {
+      "for": "exampleFormControlTextarea1"
+    }
+  }, [_vm._v("Il Tuo Messaggio")]), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.message,
+      expression: "message"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      name: "message",
+      rows: "3"
+    },
+    domProps: {
+      value: _vm.message
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.message = $event.target.value;
+      }
+    }
+  })]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary mt-4",
     attrs: {
-      type: "submit"
+      type: "submit",
+      value: "send"
     }
-  }, [_vm._v("Submit")])])])])])]);
+  }, [_vm._v("\n            Submit\n          ")])])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -2320,65 +2467,6 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "col-12 text-center pt-5"
   }, [_c("h1", [_vm._v("Contattaci")])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
-    attrs: {
-      "for": "tuoNome"
-    }
-  }, [_vm._v("Il Tuo Nome")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "tuoNome",
-      placeholder: "Inserisci il tuo nome"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleInputEmail1"
-    }
-  }, [_vm._v("Il Tuo Indirizzo Email")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "email",
-      id: "exampleInputEmail1",
-      "aria-describedby": "emailHelp",
-      placeholder: "Inserisci la tua email"
-    }
-  }), _vm._v(" "), _c("small", {
-    staticClass: "form-text text-muted",
-    attrs: {
-      id: "emailHelp"
-    }
-  }, [_vm._v("Non condivideremo il tuo indirizzo email con nessun\n              altro.")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group pt-3"
-  }, [_c("label", {
-    attrs: {
-      "for": "exampleFormControlTextarea1"
-    }
-  }, [_vm._v("Il Tuo Messaggio")]), _vm._v(" "), _c("textarea", {
-    staticClass: "form-control",
-    attrs: {
-      id: "exampleFormControlTextarea1",
-      rows: "3"
-    }
-  })]);
 }];
 render._withStripped = true;
 
@@ -7295,6 +7383,259 @@ module.exports = function escape(url) {
 
     return url
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/es/api/sendPost.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/emailjs-com/es/api/sendPost.js ***!
+  \*****************************************************/
+/*! exports provided: sendPost */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sendPost", function() { return sendPost; });
+/* harmony import */ var _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../models/EmailJSResponseStatus */ "./node_modules/emailjs-com/es/models/EmailJSResponseStatus.js");
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/store */ "./node_modules/emailjs-com/es/store/store.js");
+
+
+const sendPost = (url, data, headers = {}) => {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener('load', ({ target }) => {
+            const responseStatus = new _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__["EmailJSResponseStatus"](target);
+            if (responseStatus.status === 200 || responseStatus.text === 'OK') {
+                resolve(responseStatus);
+            }
+            else {
+                reject(responseStatus);
+            }
+        });
+        xhr.addEventListener('error', ({ target }) => {
+            reject(new _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__["EmailJSResponseStatus"](target));
+        });
+        xhr.open('POST', _store_store__WEBPACK_IMPORTED_MODULE_1__["store"]._origin + url, true);
+        Object.keys(headers).forEach((key) => {
+            xhr.setRequestHeader(key, headers[key]);
+        });
+        xhr.send(data);
+    });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/es/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/emailjs-com/es/index.js ***!
+  \**********************************************/
+/*! exports provided: init, send, sendForm, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _methods_init_init__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./methods/init/init */ "./node_modules/emailjs-com/es/methods/init/init.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "init", function() { return _methods_init_init__WEBPACK_IMPORTED_MODULE_0__["init"]; });
+
+/* harmony import */ var _methods_send_send__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./methods/send/send */ "./node_modules/emailjs-com/es/methods/send/send.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "send", function() { return _methods_send_send__WEBPACK_IMPORTED_MODULE_1__["send"]; });
+
+/* harmony import */ var _methods_sendForm_sendForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./methods/sendForm/sendForm */ "./node_modules/emailjs-com/es/methods/sendForm/sendForm.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "sendForm", function() { return _methods_sendForm_sendForm__WEBPACK_IMPORTED_MODULE_2__["sendForm"]; });
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    init: _methods_init_init__WEBPACK_IMPORTED_MODULE_0__["init"],
+    send: _methods_send_send__WEBPACK_IMPORTED_MODULE_1__["send"],
+    sendForm: _methods_sendForm_sendForm__WEBPACK_IMPORTED_MODULE_2__["sendForm"],
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/es/methods/init/init.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/emailjs-com/es/methods/init/init.js ***!
+  \**********************************************************/
+/*! exports provided: init */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "init", function() { return init; });
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/store */ "./node_modules/emailjs-com/es/store/store.js");
+
+/**
+ * Initiation
+ * @param {string} userID - set the EmailJS user ID
+ * @param {string} origin - set the EmailJS origin
+ */
+const init = (userID, origin = 'https://api.emailjs.com') => {
+    _store_store__WEBPACK_IMPORTED_MODULE_0__["store"]._userID = userID;
+    _store_store__WEBPACK_IMPORTED_MODULE_0__["store"]._origin = origin;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/es/methods/send/send.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/emailjs-com/es/methods/send/send.js ***!
+  \**********************************************************/
+/*! exports provided: send */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "send", function() { return send; });
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/store */ "./node_modules/emailjs-com/es/store/store.js");
+/* harmony import */ var _utils_validateParams__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/validateParams */ "./node_modules/emailjs-com/es/utils/validateParams.js");
+/* harmony import */ var _api_sendPost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../api/sendPost */ "./node_modules/emailjs-com/es/api/sendPost.js");
+
+
+
+/**
+ * Send a template to the specific EmailJS service
+ * @param {string} serviceID - the EmailJS service ID
+ * @param {string} templateID - the EmailJS template ID
+ * @param {object} templatePrams - the template params, what will be set to the EmailJS template
+ * @param {string} userID - the EmailJS user ID
+ * @returns {Promise<EmailJSResponseStatus>}
+ */
+const send = (serviceID, templateID, templatePrams, userID) => {
+    const uID = userID || _store_store__WEBPACK_IMPORTED_MODULE_0__["store"]._userID;
+    Object(_utils_validateParams__WEBPACK_IMPORTED_MODULE_1__["validateParams"])(uID, serviceID, templateID);
+    const params = {
+        lib_version: '3.2.0',
+        user_id: uID,
+        service_id: serviceID,
+        template_id: templateID,
+        template_params: templatePrams,
+    };
+    return Object(_api_sendPost__WEBPACK_IMPORTED_MODULE_2__["sendPost"])('/api/v1.0/email/send', JSON.stringify(params), {
+        'Content-type': 'application/json',
+    });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/es/methods/sendForm/sendForm.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/emailjs-com/es/methods/sendForm/sendForm.js ***!
+  \******************************************************************/
+/*! exports provided: sendForm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sendForm", function() { return sendForm; });
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/store */ "./node_modules/emailjs-com/es/store/store.js");
+/* harmony import */ var _utils_validateParams__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/validateParams */ "./node_modules/emailjs-com/es/utils/validateParams.js");
+/* harmony import */ var _api_sendPost__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../api/sendPost */ "./node_modules/emailjs-com/es/api/sendPost.js");
+
+
+
+const findHTMLForm = (form) => {
+    let currentForm;
+    if (typeof form === 'string') {
+        currentForm = document.querySelector(form);
+    }
+    else {
+        currentForm = form;
+    }
+    if (!currentForm || currentForm.nodeName !== 'FORM') {
+        throw 'The 3rd parameter is expected to be the HTML form element or the style selector of form';
+    }
+    return currentForm;
+};
+/**
+ * Send a form the specific EmailJS service
+ * @param {string} serviceID - the EmailJS service ID
+ * @param {string} templateID - the EmailJS template ID
+ * @param {string | HTMLFormElement} form - the form element or selector
+ * @param {string} userID - the EmailJS user ID
+ * @returns {Promise<EmailJSResponseStatus>}
+ */
+const sendForm = (serviceID, templateID, form, userID) => {
+    const uID = userID || _store_store__WEBPACK_IMPORTED_MODULE_0__["store"]._userID;
+    const currentForm = findHTMLForm(form);
+    Object(_utils_validateParams__WEBPACK_IMPORTED_MODULE_1__["validateParams"])(uID, serviceID, templateID);
+    const formData = new FormData(currentForm);
+    formData.append('lib_version', '3.2.0');
+    formData.append('service_id', serviceID);
+    formData.append('template_id', templateID);
+    formData.append('user_id', uID);
+    return Object(_api_sendPost__WEBPACK_IMPORTED_MODULE_2__["sendPost"])('/api/v1.0/email/send-form', formData);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/es/models/EmailJSResponseStatus.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/emailjs-com/es/models/EmailJSResponseStatus.js ***!
+  \*********************************************************************/
+/*! exports provided: EmailJSResponseStatus */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmailJSResponseStatus", function() { return EmailJSResponseStatus; });
+class EmailJSResponseStatus {
+    constructor(httpResponse) {
+        this.status = httpResponse.status;
+        this.text = httpResponse.responseText;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/es/store/store.js":
+/*!****************************************************!*\
+  !*** ./node_modules/emailjs-com/es/store/store.js ***!
+  \****************************************************/
+/*! exports provided: store */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "store", function() { return store; });
+const store = {
+    _origin: 'https://api.emailjs.com',
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/emailjs-com/es/utils/validateParams.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/emailjs-com/es/utils/validateParams.js ***!
+  \*************************************************************/
+/*! exports provided: validateParams */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validateParams", function() { return validateParams; });
+const validateParams = (userID, serviceID, templateID) => {
+    if (!userID) {
+        throw 'The user ID is required. Visit https://dashboard.emailjs.com/admin/integration';
+    }
+    if (!serviceID) {
+        throw 'The service ID is required. Visit https://dashboard.emailjs.com/admin';
+    }
+    if (!templateID) {
+        throw 'The template ID is required. Visit https://dashboard.emailjs.com/admin/templates';
+    }
+    return true;
+};
 
 
 /***/ }),
@@ -37404,14 +37745,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************!*\
   !*** ./resources/js/components/sections/ContactUs.vue ***!
   \********************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ContactUs_vue_vue_type_template_id_3e376f28_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContactUs.vue?vue&type=template&id=3e376f28&scoped=true& */ "./resources/js/components/sections/ContactUs.vue?vue&type=template&id=3e376f28&scoped=true&");
 /* harmony import */ var _ContactUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContactUs.vue?vue&type=script&lang=js& */ "./resources/js/components/sections/ContactUs.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ContactUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ContactUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -37441,7 +37783,7 @@ component.options.__file = "resources/js/components/sections/ContactUs.vue"
 /*!*********************************************************************************!*\
   !*** ./resources/js/components/sections/ContactUs.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
