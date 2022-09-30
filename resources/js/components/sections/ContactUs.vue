@@ -1,5 +1,5 @@
 <template>
-  <section class="ContactUs">
+  <section class="ContactUs" id="Contatti">
     <div class="container">
       <div class="row">
         <div class="col-12 text-center pt-5">
@@ -37,21 +37,25 @@
             <label>Seleziona il prodotto:</label>
 
             <div class="form-check form-check-inline">
-              <div v-for="product in products">
-                <input
-                  class="form-check-input"
-                  v-model="checkedProducts"
-                  type="checkbox"
-                  :id="product.id"
-                  :value="product.name"
-                />
-                <label class="form-check-label" for="inlineCheckbox1">{{
-                  product.name
-                }}</label>
+              <div class="row">
+                <div
+                  v-for="product in products"
+                  class="d-flex flex-wrap col-12 col-md-6 col-lg-4"
+                >
+                  <input
+                    class="form-check-input"
+                    v-model="checkedProducts"
+                    type="checkbox"
+                    :id="product.id"
+                    :value="product.name"
+                  />
+                  <label class="form-check-label" for="inlineCheckbox1">{{
+                    product.name
+                  }}</label>
+                </div>
               </div>
             </div>
 
-            <div>Checked names: {{ checkedProducts }}</div>
             <div class="form-group pt-3">
               <label for="exampleFormControlTextarea1">Il Tuo Messaggio</label>
               <textarea
