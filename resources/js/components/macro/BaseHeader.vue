@@ -2,7 +2,10 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Bottega I Due Gatti</a>
+        <a class="navbar-brand" href="#"
+          ><i class="fa-solid fa-cat"></i> Bottega i Due Gatti
+          <i class="fa-solid fa-cat"></i
+        ></a>
         <button
           class="navbar-toggler"
           type="button"

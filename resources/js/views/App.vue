@@ -4,6 +4,7 @@
     <HeroMain />
     <BaseMain />
     <ContactUs />
+    <BaseFooter />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import BaseHeader from "../components/macro/BaseHeader.vue";
 import HeroMain from "../components/sections/HeroMain.vue";
 import BaseMain from "../components/macro/BaseMain.vue";
 import ContactUs from "../components/sections/ContactUs.vue";
+import BaseFooter from "../components/macro/BaseFooter.vue";
 export default {
   name: "App",
   components: {
@@ -19,6 +21,7 @@ export default {
     HeroMain,
     BaseMain,
     ContactUs,
+    BaseFooter,
   },
 };
 </script>
