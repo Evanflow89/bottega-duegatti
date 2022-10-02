@@ -2,7 +2,7 @@
   <div class="container main-content">
     <div class="row">
       <div class="col-12 text-center p-5">
-        <h1 id="#Prodotti">I nostri Prodotti</h1>
+        <h1>I nostri Prodotti</h1>
       </div>
     </div>
     <div class="row d-flex justify-content-center">
@@ -42,11 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
-  background-image: url("../components/img/miri-mina-EXMCLru2dzs-unsplash.jpg");
-  background-size: cover;
-}
 .main-content {
-  background-color: rgba($color: #000000, $alpha: 0.7);
+  background-color: rgba($color: #000000, $alpha: 0.4);
 }
 </style>

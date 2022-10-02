@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main id="Prodotti">
     <router-view></router-view>
   </main>
 </template>
@@ -11,4 +11,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+main {
+  background-image: url("../img/alex-azabache-rRg87xGylnk-unsplash.jpg");
+  background-position: center;
+}
 </style>

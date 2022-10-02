@@ -28,7 +28,7 @@
               <a class="nav-link" href="#Prodotti">Prodotti</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contatti</a>
+              <a class="nav-link" href="#Contatti">Contatti</a>
             </li>
           </ul>
         </div>
