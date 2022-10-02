@@ -35,7 +35,6 @@
               >
             </div>
             <label>Seleziona il prodotto:</label>
-
             <div class="form-check form-check-inline">
               <div class="row">
                 <div
