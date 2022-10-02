@@ -2,7 +2,7 @@
   <div class="container product">
     <h1 class="text-center p-5">{{ product.name }}</h1>
     <div class="row d-flex justify-content-center">
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <div
           id="carouselExampleIndicators"
           class="carousel slide"
@@ -52,7 +52,7 @@
         </div>
       </div>
       <!-- ######### RIGHT SIDE ########### -->
-      <div class="col-4">
+      <div class="col-12 col-md-4 pt-4">
         <div class="name-product">
           <p><strong>Nome Prodotto:</strong> {{ product.name }}</p>
         </div>

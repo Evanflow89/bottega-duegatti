@@ -41,6 +41,7 @@
                 <div
                   v-for="product in products"
                   class="d-flex flex-wrap col-12 col-md-6 col-lg-4"
+                  :key="product.id"
                 >
                   <input
                     class="form-check-input"
@@ -94,12 +95,13 @@ export default {
     sendEmail(e) {
       try {
         emailjs.sendForm(
-          "service_o26hno8",
-          "template_kgnvz7c",
-          this.$refs.form,
+          "service_dk2v8we",
+          "template_blzi7ly",
+          e.target,
           "pYpaUviXY0oc4eRyf",
           {
             name: this.name,
+            to_name: "Bottega i Due Gatti",
             checkedProducts: this.checkedProducts,
             email: this.email,
             message: this.message,

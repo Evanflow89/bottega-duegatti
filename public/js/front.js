@@ -1971,8 +1971,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     sendEmail: function sendEmail(e) {
       try {
-        emailjs_com__WEBPACK_IMPORTED_MODULE_0__["default"].sendForm("service_o26hno8", "template_kgnvz7c", this.$refs.form, "pYpaUviXY0oc4eRyf", {
+        emailjs_com__WEBPACK_IMPORTED_MODULE_0__["default"].sendForm("service_dk2v8we", "template_blzi7ly", e.target, "pYpaUviXY0oc4eRyf", {
           name: this.name,
+          to_name: "Bottega i Due Gatti",
           checkedProducts: this.checkedProducts,
           email: this.email,
           message: this.message
@@ -2386,6 +2387,7 @@ var render = function render() {
     staticClass: "row"
   }, _vm._l(_vm.products, function (product) {
     return _c("div", {
+      key: product.id,
       staticClass: "d-flex flex-wrap col-12 col-md-6 col-lg-4"
     }, [_c("input", {
       directives: [{
@@ -2641,7 +2643,7 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.product.name))]), _vm._v(" "), _c("div", {
     staticClass: "row d-flex justify-content-center"
   }, [_c("div", {
-    staticClass: "col-4"
+    staticClass: "col-12 col-md-4"
   }, [_c("div", {
     staticClass: "carousel slide",
     attrs: {
@@ -2676,7 +2678,7 @@ var render = function render() {
       alt: "..."
     }
   })]) : _vm._e()]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-4"
+    staticClass: "col-12 col-md-4 pt-4"
   }, [_c("div", {
     staticClass: "name-product"
   }, [_c("p", [_c("strong", [_vm._v("Nome Prodotto:")]), _vm._v(" " + _vm._s(_vm.product.name))])]), _vm._v(" "), _c("div", {
