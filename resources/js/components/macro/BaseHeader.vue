@@ -60,8 +60,9 @@ header {
   .navbar-custom {
     background-image: url("../img/sfondo.jpg");
     background-size: cover;
+    background-position: center;
     a {
-      color: var(--text);
+      color: var(--cafe-au-lait);
     }
 
     .active {

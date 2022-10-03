@@ -31,5 +31,8 @@ footer {
   p {
     font-size: 3.125rem;
   }
+  .fa-brands {
+    color: var(--cafe-au-lait);
+  }
 }
 </style>

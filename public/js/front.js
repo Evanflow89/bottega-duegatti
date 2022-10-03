@@ -2029,7 +2029,22 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "HeroMain"
+  name: "HeroMain",
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".hero").forEach(function (hero, i) {
+      ScrollTrigger.create({
+        trigger: hero,
+        endTrigger: ".hero2",
+        start: "top top",
+        pin: true,
+        pinSpacing: false
+      });
+    });
+  }
 });
 
 /***/ }),
@@ -2571,21 +2586,29 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("section", {
-    staticClass: "hero mt-2",
+  return _c("main", {
+    attrs: {
+      id: "main"
+    }
+  }, [_c("section", {
+    staticClass: "hero hero1 mt-2",
     attrs: {
       id: "ChiSiamo"
     }
   }, [_c("div", {
     staticClass: "container hero-section"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "row row-first"
   }, [_c("div", {
     staticClass: "col-12 col-xl-6 order-6 order-xl-1 d-flex align-items-center content-hero"
-  }, [_vm._v("\n        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,\n        odit dolore. Veniam placeat itaque mollitia dignissimos sapiente\n        laboriosam ex fugit, fugiat animi molestiae incidunt dolore debitis\n        optio maxime deserunt? Laudantium. Rerum tenetur sunt similique\n        minima. Nesciunt praesentium minus mollitia dolorem delectus, quas\n        adipisci ullam odio, fuga consectetur veniam, cupiditate ipsam unde\n        tenetur. Sed illo et, nihil recusandae quos assumenda tenetur! Sequi\n        fugit laboriosam corrupti, repudiandae nulla odio natus eius obcaecati\n        error minima facilis similique adipisci hic fuga? Exercitationem sunt\n        eveniet tempora necessitatibus ea officia? Quasi voluptas ipsa aut\n        officia nihil? Est et quas dignissimos a suscipit doloremque ex culpa\n        dicta eius magnam vel sed corporis neque officiis iure quis velit cum\n        harum qui, reiciendis quidem quaerat ipsam? Fuga, similique ex. Veniam\n        eum temporibus totam amet blanditiis quibusdam recusandae facere ipsa\n        dolorum corrupti, odit quos fugiat, error illum voluptate iure. Dicta\n        doloremque molestias in placeat sint illum maiores enim nobis\n        consectetur. Odit debitis alias quam veniam numquam. Nulla maiores vel\n        ducimus iusto quos at cumque nostrum a quidem iste recusandae voluptas\n        totam quod nam dignissimos neque ipsam, velit eaque excepturi\n        nesciunt.\n      ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n          Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n          Laudantium, odit dolore. Veniam placeat itaque mollitia dignissimos\n          sapiente laboriosam ex fugit, fugiat animi molestiae incidunt dolore\n          debitis optio maxime deserunt? Laudantium. Rerum tenetur sunt\n          similique minima. Nesciunt praesentium minus mollitia dolorem\n          delectus, quas adipisci ullam odio, fuga consectetur veniam,\n          cupiditate ipsam unde tenetur. Sed illo et, nihil recusandae quos\n          assumenda tenetur! Sequi fugit laboriosam corrupti, repudiandae\n          nulla odio natus eius obcaecati error minima facilis similique\n          adipisci hic fuga? Exercitationem sunt eveniet tempora\n          necessitatibus ea officia? Quasi voluptas ipsa aut officia nihil?\n          Est et quas dignissimos a suscipit doloremque ex culpa dicta eius\n          magnam vel sed corporis neque officiis iure quis velit cum harum\n          qui, reiciendis quidem quaerat ipsam? Fuga, similique ex. Veniam eum\n          temporibus totam amet blanditiis quibusdam recusandae facere ipsa\n          dolorum corrupti, odit quos fugiat, error illum voluptate iure.\n          Dicta doloremque molestias in placeat sint illum maiores enim nobis\n          consectetur. Odit debitis alias quam veniam numquam. Nulla maiores\n          vel ducimus iusto quos at cumque nostrum a quidem iste recusandae\n          voluptas totam quod nam dignissimos neque ipsam, velit eaque\n          excepturi nesciunt.\n        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-12 col-xl-6 order-1 order-xl-6 pb-5 d-flex align-items-center justify-content-center"
-  }, [_c("h2", [_vm._v("Chi")])])]), _vm._v(" "), _c("div", {
-    staticClass: "row image-container"
+  }, [_c("h2", [_vm._v("Chi")])])])])]), _vm._v(" "), _c("section", {
+    staticClass: "hero hero2 mt-2"
+  }, [_c("div", {
+    staticClass: "container hero-section"
+  }, [_c("div", {
+    staticClass: "row image-container row-second"
   }, [_c("div", {
     staticClass: "col-12 col-xl-6 pb-5 d-flex align-items-center justify-content-center"
   }, [_c("h2", [_vm._v("Siamo")])]), _vm._v(" "), _c("div", {
@@ -2593,14 +2616,18 @@ var staticRenderFns = [function () {
   }, [_c("img", {
     staticClass: "img-hero img-fluid d-flex align-items-center",
     attrs: {
-      src: __webpack_require__(/*! ../img/carter-yocham-JTuuDH9uFlg-unsplash.jpg */ "./resources/js/components/img/carter-yocham-JTuuDH9uFlg-unsplash.jpg"),
+      src: __webpack_require__(/*! ../img/siamo.jpg */ "./resources/js/components/img/siamo.jpg"),
       alt: ""
     }
-  })])]), _vm._v(" "), _c("div", {
-    staticClass: "row"
+  })])])])]), _vm._v(" "), _c("section", {
+    staticClass: "hero hero3 mt-2"
+  }, [_c("div", {
+    staticClass: "container hero-section"
+  }, [_c("div", {
+    staticClass: "row row-third"
   }, [_c("div", {
     staticClass: "col-12 d-flex align-items-center content-hero2"
-  }, [_vm._v("\n        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,\n        odit dolore. Veniam placeat itaque mollitia dignissimos sapiente\n        laboriosam ex fugit, fugiat animi molestiae incidunt dolore debitis\n        optio maxime deserunt? Laudantium. Rerum tenetur sunt similique\n        minima. Nesciunt praesentium minus mollitia dolorem delectus, quas\n        adipisci ullam odio, fuga consectetur veniam, cupiditate ipsam unde\n        tenetur. Sed illo et, nihil recusandae quos assumenda tenetur! Sequi\n        fugit laboriosam corrupti, repudiandae nulla odio natus eius obcaecati\n        error minima facilis similique adipisci hic fuga? Exercitationem sunt\n        eveniet tempora necessitatibus ea officia? Quasi voluptas ipsa aut\n        officia nihil?\n      ")])])])]);
+  }, [_vm._v("\n          Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n          Laudantium, odit dolore. Veniam placeat itaque mollitia dignissimos\n          sapiente laboriosam ex fugit, fugiat animi molestiae incidunt dolore\n          debitis optio maxime deserunt? Laudantium. Rerum tenetur sunt\n          similique minima. Nesciunt praesentium minus mollitia dolorem\n          delectus, quas adipisci ullam odio, fuga consectetur veniam,\n          cupiditate ipsam unde tenetur. Sed illo et, nihil recusandae quos\n          assumenda tenetur! Sequi fugit laboriosam corrupti, repudiandae\n          nulla odio natus eius obcaecati error minima facilis similique\n          adipisci hic fuga? Exercitationem sunt eveniet tempora\n          necessitatibus ea officia? Quasi voluptas ipsa aut officia nihil?\n        ")])])])])]);
 }];
 render._withStripped = true;
 
@@ -7263,7 +7290,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "footer h2[data-v-cc917e4c],\nfooter .fa-brands[data-v-cc917e4c],\nfooter p[data-v-cc917e4c] {\n  font-size: 3.125rem;\n}", ""]);
+exports.push([module.i, "footer h2[data-v-cc917e4c],\nfooter .fa-brands[data-v-cc917e4c],\nfooter p[data-v-cc917e4c] {\n  font-size: 3.125rem;\n}\nfooter .fa-brands[data-v-cc917e4c] {\n  color: var(--cafe-au-lait);\n}", ""]);
 
 // exports
 
@@ -7283,7 +7310,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header[data-v-8a2cb668] {\n  font-family: \"Amatic SC\", cursive;\n  font-size: 40px;\n}\nheader a[data-v-8a2cb668] {\n  font-size: 50px;\n}\nheader .white[data-v-8a2cb668] {\n  color: white;\n}\nheader .navbar-custom[data-v-8a2cb668] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/sfondo.jpg */ "./resources/js/components/img/sfondo.jpg")) + ");\n  background-size: cover;\n}\nheader .navbar-custom a[data-v-8a2cb668] {\n  color: var(--text);\n}\nheader .navbar-custom .active[data-v-8a2cb668] {\n  color: white;\n}\nheader .nav-menu[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n}", ""]);
+exports.push([module.i, "header[data-v-8a2cb668] {\n  font-family: \"Amatic SC\", cursive;\n  font-size: 40px;\n}\nheader a[data-v-8a2cb668] {\n  font-size: 50px;\n}\nheader .white[data-v-8a2cb668] {\n  color: white;\n}\nheader .navbar-custom[data-v-8a2cb668] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/sfondo.jpg */ "./resources/js/components/img/sfondo.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n}\nheader .navbar-custom a[data-v-8a2cb668] {\n  color: var(--cafe-au-lait);\n}\nheader .navbar-custom .active[data-v-8a2cb668] {\n  color: white;\n}\nheader .nav-menu[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n}", ""]);
 
 // exports
 
@@ -7303,7 +7330,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "main[data-v-cd0ca090] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/alex-azabache-rRg87xGylnk-unsplash.jpg */ "./resources/js/components/img/alex-azabache-rRg87xGylnk-unsplash.jpg")) + ");\n  background-position: center;\n}", ""]);
+exports.push([module.i, "main[data-v-cd0ca090] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/main.jpg */ "./resources/js/components/img/main.jpg")) + ");\n  background-position: center;\n}", ""]);
 
 // exports
 
@@ -7323,7 +7350,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".hero[data-v-48008a0e] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/hero.jpg */ "./resources/js/components/img/hero.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n}\n.hero-section[data-v-48008a0e] {\n  background-color: rgba(0, 0, 0, 0.4);\n  padding-top: 6.25rem;\n  padding-bottom: 6.25rem;\n}\n.img-hero[data-v-48008a0e] {\n  max-height: 400px;\n  border-radius: 10px;\n}\n.image-container[data-v-48008a0e] {\n  padding-top: 6.25rem;\n}\n.content-hero2[data-v-48008a0e] {\n  padding-top: 6.25rem;\n}", ""]);
+exports.push([module.i, ".hero[data-v-48008a0e] {\n  background-size: cover;\n  height: 100vh;\n}\n.hero1[data-v-48008a0e] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/hero.jpg */ "./resources/js/components/img/hero.jpg")) + ");\n}\n.hero2[data-v-48008a0e] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/hero2.jpg */ "./resources/js/components/img/hero2.jpg")) + ");\n}\n.hero3[data-v-48008a0e] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/hero3.jpg */ "./resources/js/components/img/hero3.jpg")) + ");\n}\n.row[data-v-48008a0e] {\n  height: 100vh;\n}\n.hero-section[data-v-48008a0e] {\n  background-color: rgba(0, 0, 0, 0.4);\n}\n.img-hero[data-v-48008a0e] {\n  max-height: 400px;\n  border-radius: 10px;\n}\n.image-container[data-v-48008a0e] {\n  padding-top: 6.25rem;\n}", ""]);
 
 // exports
 
@@ -37648,28 +37675,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/img/alex-azabache-rRg87xGylnk-unsplash.jpg":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/img/alex-azabache-rRg87xGylnk-unsplash.jpg ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/alex-azabache-rRg87xGylnk-unsplash.jpg?fd1829f11708874812e3ccee636cfb7d";
-
-/***/ }),
-
-/***/ "./resources/js/components/img/carter-yocham-JTuuDH9uFlg-unsplash.jpg":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/img/carter-yocham-JTuuDH9uFlg-unsplash.jpg ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/carter-yocham-JTuuDH9uFlg-unsplash.jpg?acfbac61dda086edb4687c9fbe2b8996";
-
-/***/ }),
-
 /***/ "./resources/js/components/img/hero.jpg":
 /*!**********************************************!*\
   !*** ./resources/js/components/img/hero.jpg ***!
@@ -37677,7 +37682,40 @@ module.exports = "/images/carter-yocham-JTuuDH9uFlg-unsplash.jpg?acfbac61dda086e
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/hero.jpg?255fcab8e8bc7ea30da9201b78c94db7";
+module.exports = "/images/hero.jpg?374f303418504cab32c1f28286ee50ab";
+
+/***/ }),
+
+/***/ "./resources/js/components/img/hero2.jpg":
+/*!***********************************************!*\
+  !*** ./resources/js/components/img/hero2.jpg ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hero2.jpg?bbd327bca32d7f828dfce28541cda247";
+
+/***/ }),
+
+/***/ "./resources/js/components/img/hero3.jpg":
+/*!***********************************************!*\
+  !*** ./resources/js/components/img/hero3.jpg ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hero3.jpg?00f8580ee44a1631e453818bd6634c71";
+
+/***/ }),
+
+/***/ "./resources/js/components/img/main.jpg":
+/*!**********************************************!*\
+  !*** ./resources/js/components/img/main.jpg ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/main.jpg?1e5dba7bec866d24bec752fd80d25cb4";
 
 /***/ }),
 
@@ -37688,7 +37726,18 @@ module.exports = "/images/hero.jpg?255fcab8e8bc7ea30da9201b78c94db7";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/sfondo.jpg?e53e576f64348b51d95fe8cadc3fa307";
+module.exports = "/images/sfondo.jpg?90f981e22ea25b60ef2b28e37a2b345e";
+
+/***/ }),
+
+/***/ "./resources/js/components/img/siamo.jpg":
+/*!***********************************************!*\
+  !*** ./resources/js/components/img/siamo.jpg ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/siamo.jpg?0df409950a019935527680a76fbfd48c";
 
 /***/ }),
 
