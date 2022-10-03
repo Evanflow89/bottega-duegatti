@@ -1,7 +1,7 @@
 <template>
   <main id="main">
     <section class="hero hero1 mt-2" id="ChiSiamo">
-      <div class="container hero-section sec1">
+      <div class="container hero-section">
         <div class="row row-first">
           <div
             class="
@@ -50,7 +50,7 @@
       </div>
     </section>
     <section class="hero hero2 mt-2">
-      <div class="container hero-section sec2">
+      <div class="container hero-section">
         <div class="row image-container row-second">
           <div
             class="
@@ -74,7 +74,7 @@
           >
             <img
               class="img-hero img-fluid d-flex align-items-center"
-              src="../img/carter-yocham-JTuuDH9uFlg-unsplash.jpg"
+              src="../img/siamo.jpg"
               alt=""
             />
           </div>
@@ -82,7 +82,7 @@
       </div>
     </section>
     <section class="hero hero3 mt-2">
-      <div class="container hero-section sec3">
+      <div class="container hero-section">
         <div class="row row-third">
           <div class="col-12 d-flex align-items-center content-hero2">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -127,10 +127,20 @@ export default {
 
 <style lang="scss" scoped>
 .hero {
-  background-image: url("../img/hero.jpg");
   background-size: cover;
-  background-position: center;
   height: 100vh;
+}
+
+.hero1 {
+  background-image: url("../img/hero.jpg");
+}
+
+.hero2 {
+  background-image: url("../img/hero2.jpg");
+}
+
+.hero3 {
+  background-image: url("../img/hero3.jpg");
 }
 
 .row {

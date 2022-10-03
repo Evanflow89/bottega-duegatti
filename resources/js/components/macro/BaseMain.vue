@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  background-image: url("../img/alex-azabache-rRg87xGylnk-unsplash.jpg");
+  background-image: url("../img/main.jpg");
   background-position: center;
 }
 </style>
