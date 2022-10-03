@@ -2029,7 +2029,22 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "HeroMain"
+  name: "HeroMain",
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".hero").forEach(function (hero, i) {
+      ScrollTrigger.create({
+        trigger: hero,
+        endTrigger: ".hero2",
+        start: "top top",
+        pin: true,
+        pinSpacing: false
+      });
+    });
+  }
 });
 
 /***/ }),
@@ -2571,21 +2586,29 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("section", {
-    staticClass: "hero mt-2",
+  return _c("main", {
+    attrs: {
+      id: "main"
+    }
+  }, [_c("section", {
+    staticClass: "hero hero1 mt-2",
     attrs: {
       id: "ChiSiamo"
     }
   }, [_c("div", {
-    staticClass: "container hero-section"
+    staticClass: "container hero-section sec1"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "row row-first"
   }, [_c("div", {
     staticClass: "col-12 col-xl-6 order-6 order-xl-1 d-flex align-items-center content-hero"
-  }, [_vm._v("\n        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,\n        odit dolore. Veniam placeat itaque mollitia dignissimos sapiente\n        laboriosam ex fugit, fugiat animi molestiae incidunt dolore debitis\n        optio maxime deserunt? Laudantium. Rerum tenetur sunt similique\n        minima. Nesciunt praesentium minus mollitia dolorem delectus, quas\n        adipisci ullam odio, fuga consectetur veniam, cupiditate ipsam unde\n        tenetur. Sed illo et, nihil recusandae quos assumenda tenetur! Sequi\n        fugit laboriosam corrupti, repudiandae nulla odio natus eius obcaecati\n        error minima facilis similique adipisci hic fuga? Exercitationem sunt\n        eveniet tempora necessitatibus ea officia? Quasi voluptas ipsa aut\n        officia nihil? Est et quas dignissimos a suscipit doloremque ex culpa\n        dicta eius magnam vel sed corporis neque officiis iure quis velit cum\n        harum qui, reiciendis quidem quaerat ipsam? Fuga, similique ex. Veniam\n        eum temporibus totam amet blanditiis quibusdam recusandae facere ipsa\n        dolorum corrupti, odit quos fugiat, error illum voluptate iure. Dicta\n        doloremque molestias in placeat sint illum maiores enim nobis\n        consectetur. Odit debitis alias quam veniam numquam. Nulla maiores vel\n        ducimus iusto quos at cumque nostrum a quidem iste recusandae voluptas\n        totam quod nam dignissimos neque ipsam, velit eaque excepturi\n        nesciunt.\n      ")]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n          Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n          Laudantium, odit dolore. Veniam placeat itaque mollitia dignissimos\n          sapiente laboriosam ex fugit, fugiat animi molestiae incidunt dolore\n          debitis optio maxime deserunt? Laudantium. Rerum tenetur sunt\n          similique minima. Nesciunt praesentium minus mollitia dolorem\n          delectus, quas adipisci ullam odio, fuga consectetur veniam,\n          cupiditate ipsam unde tenetur. Sed illo et, nihil recusandae quos\n          assumenda tenetur! Sequi fugit laboriosam corrupti, repudiandae\n          nulla odio natus eius obcaecati error minima facilis similique\n          adipisci hic fuga? Exercitationem sunt eveniet tempora\n          necessitatibus ea officia? Quasi voluptas ipsa aut officia nihil?\n          Est et quas dignissimos a suscipit doloremque ex culpa dicta eius\n          magnam vel sed corporis neque officiis iure quis velit cum harum\n          qui, reiciendis quidem quaerat ipsam? Fuga, similique ex. Veniam eum\n          temporibus totam amet blanditiis quibusdam recusandae facere ipsa\n          dolorum corrupti, odit quos fugiat, error illum voluptate iure.\n          Dicta doloremque molestias in placeat sint illum maiores enim nobis\n          consectetur. Odit debitis alias quam veniam numquam. Nulla maiores\n          vel ducimus iusto quos at cumque nostrum a quidem iste recusandae\n          voluptas totam quod nam dignissimos neque ipsam, velit eaque\n          excepturi nesciunt.\n        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-12 col-xl-6 order-1 order-xl-6 pb-5 d-flex align-items-center justify-content-center"
-  }, [_c("h2", [_vm._v("Chi")])])]), _vm._v(" "), _c("div", {
-    staticClass: "row image-container"
+  }, [_c("h2", [_vm._v("Chi")])])])])]), _vm._v(" "), _c("section", {
+    staticClass: "hero hero2 mt-2"
+  }, [_c("div", {
+    staticClass: "container hero-section sec2"
+  }, [_c("div", {
+    staticClass: "row image-container row-second"
   }, [_c("div", {
     staticClass: "col-12 col-xl-6 pb-5 d-flex align-items-center justify-content-center"
   }, [_c("h2", [_vm._v("Siamo")])]), _vm._v(" "), _c("div", {
@@ -2596,11 +2619,15 @@ var staticRenderFns = [function () {
       src: __webpack_require__(/*! ../img/carter-yocham-JTuuDH9uFlg-unsplash.jpg */ "./resources/js/components/img/carter-yocham-JTuuDH9uFlg-unsplash.jpg"),
       alt: ""
     }
-  })])]), _vm._v(" "), _c("div", {
-    staticClass: "row"
+  })])])])]), _vm._v(" "), _c("section", {
+    staticClass: "hero hero3 mt-2"
+  }, [_c("div", {
+    staticClass: "container hero-section sec3"
+  }, [_c("div", {
+    staticClass: "row row-third"
   }, [_c("div", {
     staticClass: "col-12 d-flex align-items-center content-hero2"
-  }, [_vm._v("\n        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium,\n        odit dolore. Veniam placeat itaque mollitia dignissimos sapiente\n        laboriosam ex fugit, fugiat animi molestiae incidunt dolore debitis\n        optio maxime deserunt? Laudantium. Rerum tenetur sunt similique\n        minima. Nesciunt praesentium minus mollitia dolorem delectus, quas\n        adipisci ullam odio, fuga consectetur veniam, cupiditate ipsam unde\n        tenetur. Sed illo et, nihil recusandae quos assumenda tenetur! Sequi\n        fugit laboriosam corrupti, repudiandae nulla odio natus eius obcaecati\n        error minima facilis similique adipisci hic fuga? Exercitationem sunt\n        eveniet tempora necessitatibus ea officia? Quasi voluptas ipsa aut\n        officia nihil?\n      ")])])])]);
+  }, [_vm._v("\n          Lorem ipsum dolor sit, amet consectetur adipisicing elit.\n          Laudantium, odit dolore. Veniam placeat itaque mollitia dignissimos\n          sapiente laboriosam ex fugit, fugiat animi molestiae incidunt dolore\n          debitis optio maxime deserunt? Laudantium. Rerum tenetur sunt\n          similique minima. Nesciunt praesentium minus mollitia dolorem\n          delectus, quas adipisci ullam odio, fuga consectetur veniam,\n          cupiditate ipsam unde tenetur. Sed illo et, nihil recusandae quos\n          assumenda tenetur! Sequi fugit laboriosam corrupti, repudiandae\n          nulla odio natus eius obcaecati error minima facilis similique\n          adipisci hic fuga? Exercitationem sunt eveniet tempora\n          necessitatibus ea officia? Quasi voluptas ipsa aut officia nihil?\n        ")])])])])]);
 }];
 render._withStripped = true;
 
@@ -7323,7 +7350,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".hero[data-v-48008a0e] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/hero.jpg */ "./resources/js/components/img/hero.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n}\n.hero-section[data-v-48008a0e] {\n  background-color: rgba(0, 0, 0, 0.4);\n  padding-top: 6.25rem;\n  padding-bottom: 6.25rem;\n}\n.img-hero[data-v-48008a0e] {\n  max-height: 400px;\n  border-radius: 10px;\n}\n.image-container[data-v-48008a0e] {\n  padding-top: 6.25rem;\n}\n.content-hero2[data-v-48008a0e] {\n  padding-top: 6.25rem;\n}", ""]);
+exports.push([module.i, ".hero[data-v-48008a0e] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/hero.jpg */ "./resources/js/components/img/hero.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n  height: 100vh;\n}\n.row[data-v-48008a0e] {\n  height: 100vh;\n}\n.hero-section[data-v-48008a0e] {\n  background-color: rgba(0, 0, 0, 0.4);\n}\n.img-hero[data-v-48008a0e] {\n  max-height: 400px;\n  border-radius: 10px;\n}\n.image-container[data-v-48008a0e] {\n  padding-top: 6.25rem;\n}", ""]);
 
 // exports
 

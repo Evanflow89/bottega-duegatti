@@ -25,7 +25,7 @@
     },
     "dependencies": {
         "emailjs-com": "^3.2.0",
-        "gsap": "^3.11.1",
+        "gsap": "^3.11.2",
         "vue-router": "^3.5.3"
     }
 }
