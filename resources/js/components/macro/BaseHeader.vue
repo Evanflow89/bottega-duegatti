@@ -49,9 +49,9 @@ export default {
 <style lang="scss" scoped>
 header {
   font-family: "Amatic SC", cursive;
-  font-size: 40px;
+  font-size: 35px;
   a {
-    font-size: 50px;
+    font-size: 35px;
   }
   .white {
     color: white;

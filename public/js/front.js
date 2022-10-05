@@ -2237,15 +2237,15 @@ var staticRenderFns = [function () {
   return _c("footer", [_c("div", {
     staticClass: "container pt-5"
   }, [_c("div", {
-    staticClass: "row d-flex align-items-center"
+    staticClass: "row d-flex align-items-center text-center"
   }, [_c("div", {
-    staticClass: "col-6"
+    staticClass: "col-12 col-md-6"
   }, [_c("h2", [_c("i", {
     staticClass: "fa-solid fa-cat"
   }), _vm._v(" Bottega i Due Gatti\n          "), _c("i", {
     staticClass: "fa-solid fa-cat"
   })])]), _vm._v(" "), _c("div", {
-    staticClass: "col-6 d-flex justify-content-around align-items-center"
+    staticClass: "col-12 col-md-6 d-flex justify-content-around align-items-center"
   }, [_c("p", [_vm._v("I nostri Social:")]), _vm._v(" "), _c("i", {
     staticClass: "fa-brands fa-facebook"
   }), _vm._v(" "), _c("i", {
@@ -2463,57 +2463,9 @@ var render = function render() {
     attrs: {
       id: "emailHelp"
     }
-  }, [_vm._v("Non condivideremo il tuo indirizzo email con nessun\n              altro.")])]), _vm._v(" "), _c("label", [_vm._v("Seleziona il prodotto:")]), _vm._v(" "), _c("div", {
-    staticClass: "form-check form-check-inline"
-  }, [_c("div", {
-    staticClass: "row"
-  }, _vm._l(_vm.products, function (product) {
-    return _c("div", {
-      key: product.id,
-      staticClass: "d-flex flex-wrap col-12 col-md-6 col-lg-4"
-    }, [_c("input", {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: _vm.checkedProducts,
-        expression: "checkedProducts"
-      }],
-      staticClass: "form-check-input",
-      attrs: {
-        type: "checkbox",
-        id: product.id
-      },
-      domProps: {
-        value: product.name,
-        checked: Array.isArray(_vm.checkedProducts) ? _vm._i(_vm.checkedProducts, product.name) > -1 : _vm.checkedProducts
-      },
-      on: {
-        change: function change($event) {
-          var $$a = _vm.checkedProducts,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false;
-
-          if (Array.isArray($$a)) {
-            var $$v = product.name,
-                $$i = _vm._i($$a, $$v);
-
-            if ($$el.checked) {
-              $$i < 0 && (_vm.checkedProducts = $$a.concat([$$v]));
-            } else {
-              $$i > -1 && (_vm.checkedProducts = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
-            }
-          } else {
-            _vm.checkedProducts = $$c;
-          }
-        }
-      }
-    }), _vm._v(" "), _c("label", {
-      staticClass: "form-check-label",
-      attrs: {
-        "for": "inlineCheckbox1"
-      }
-    }, [_vm._v(_vm._s(product.name))])]);
-  }), 0)]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Non condivideremo il tuo indirizzo email con nessun\n              altro.")])]), _vm._v(" "), _c("label", [_vm._v("Prodotti Disponibili:")]), _vm._v(" "), _c("ul", _vm._l(_vm.products, function (product) {
+    return _c("li", [_vm._v("\n              " + _vm._s(product.name) + "\n            ")]);
+  }), 0), _vm._v(" "), _c("div", {
     staticClass: "form-group pt-3"
   }, [_c("label", {
     attrs: {
@@ -2529,7 +2481,8 @@ var render = function render() {
     staticClass: "form-control",
     attrs: {
       name: "message",
-      rows: "3"
+      rows: "3",
+      placeholder: "Nel messaggio ricordati di indicare il nome dell'oggetto per la quale vuoi ricevere informazioni"
     },
     domProps: {
       value: _vm.message
@@ -7310,7 +7263,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header[data-v-8a2cb668] {\n  font-family: \"Amatic SC\", cursive;\n  font-size: 40px;\n}\nheader a[data-v-8a2cb668] {\n  font-size: 50px;\n}\nheader .white[data-v-8a2cb668] {\n  color: white;\n}\nheader .navbar-custom[data-v-8a2cb668] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/sfondo.jpg */ "./resources/js/components/img/sfondo.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n}\nheader .navbar-custom a[data-v-8a2cb668] {\n  color: var(--cafe-au-lait);\n}\nheader .navbar-custom .active[data-v-8a2cb668] {\n  color: white;\n}\nheader .nav-menu[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n}", ""]);
+exports.push([module.i, "header[data-v-8a2cb668] {\n  font-family: \"Amatic SC\", cursive;\n  font-size: 35px;\n}\nheader a[data-v-8a2cb668] {\n  font-size: 35px;\n}\nheader .white[data-v-8a2cb668] {\n  color: white;\n}\nheader .navbar-custom[data-v-8a2cb668] {\n  background-image: url(" + escape(__webpack_require__(/*! ../img/sfondo.jpg */ "./resources/js/components/img/sfondo.jpg")) + ");\n  background-size: cover;\n  background-position: center;\n}\nheader .navbar-custom a[data-v-8a2cb668] {\n  color: var(--cafe-au-lait);\n}\nheader .navbar-custom .active[data-v-8a2cb668] {\n  color: white;\n}\nheader .nav-menu[data-v-8a2cb668] {\n  display: flex;\n  justify-content: space-between;\n}", ""]);
 
 // exports
 

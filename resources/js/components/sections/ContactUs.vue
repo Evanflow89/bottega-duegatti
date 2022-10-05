@@ -34,27 +34,12 @@
                 altro.</small
               >
             </div>
-            <label>Seleziona il prodotto:</label>
-            <div class="form-check form-check-inline">
-              <div class="row">
-                <div
-                  v-for="product in products"
-                  class="d-flex flex-wrap col-12 col-md-6 col-lg-4"
-                  :key="product.id"
-                >
-                  <input
-                    class="form-check-input"
-                    v-model="checkedProducts"
-                    type="checkbox"
-                    :id="product.id"
-                    :value="product.name"
-                  />
-                  <label class="form-check-label" for="inlineCheckbox1">{{
-                    product.name
-                  }}</label>
-                </div>
-              </div>
-            </div>
+            <label>Prodotti Disponibili:</label>
+            <ul>
+              <li v-for="product in products">
+                {{ product.name }}
+              </li>
+            </ul>
 
             <div class="form-group pt-3">
               <label for="exampleFormControlTextarea1">Il Tuo Messaggio</label>
@@ -63,6 +48,7 @@
                 v-model="message"
                 class="form-control"
                 rows="3"
+                placeholder="Nel messaggio ricordati di indicare il nome dell'oggetto per la quale vuoi ricevere informazioni"
               ></textarea>
             </div>
 
